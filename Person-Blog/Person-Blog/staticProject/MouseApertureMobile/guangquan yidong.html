@@ -1,0 +1,59 @@
+<!--
+   1:禁止拖拉事件ondragstart="return false" 以免鼠标的按下和移动发生冲突
+   2:onselectstart="return false" 禁止鼠标的选中
+   图片往上跑，和慢慢的消失
+-->
+<!doctype html>
+<html lang="en" onselectstart="return false">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>鼠标光圈</title>
+  <style type="text/css">
+           *{margin:0px;padding:0px;}
+		   body{background:#000;}
+		   img{width:70px;height:70px;position:absolute;}
+  
+  </style>
+ </head>
+ <body>
+       
+
+
+	     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+         <script type="text/javascript">
+		            $(function(){
+						 var index = 0;
+						 var src;
+					     $(document).mousedown(function(){
+						     $(this).bind('mousemove',function(e){
+								 index++;
+								 //src = index%5;  // 永远会小于5,取于会是0-5
+								 src = Math.floor(index/5)%5;  // 右边第一个5的参数表示生成多少个
+								 $("body").append('<img id="img'+index+'" src="images/'+src+'.png" ondragstart="return false" style="top:'+(e.clientY-35)+'px;left:'+(e.clientX-35)+'px;" />'); 
+								 $('#img'+index).stop(true).animate({  // 指向的是当前的index
+								     top:(e.clientY-235)+'px',
+									 width:'0px',
+									 height:'0px'
+								 },1500,function(){
+								     $(this).remove();
+								 });
+							 });
+						 }).mouseup(function(){
+						     $(this).unbind("mouseove");
+
+
+						 });
+						 // 给顶一个定时器
+						 setInterval(function(){
+						      index++;
+							  index %=7;
+						 },5000);
+					});
+		 
+		 </script>
+ </body>
+</html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>落网音乐网站</title>
+  <link type="text/css" href="css/font/iconfont.css" rel="stylesheet">
+  <!--
+	2015/8/1
+    author:ChuanChuan
+  -->
+  <style>
+    *{padding:0px;margin:0px;}
+	ul,li{list-style:none;list-style-image:none;}
+	a{text-decoration:none;}
+	body{font-size:16px;font-family:"微软雅黑";overflow-x:hidden;}
+	body img{border:none;}
+	/*头部*/
+	#top{height:52px;background:#F2F2F2;}
+    #top .header{width:960px;height:52px;margin:0 auto;line-height:52px;position:relative;}
+    #top .header .logo{width:42px;height:52px;
+	                   background-image:url("image/luowang.png");
+	                   background-position:1px -293px;display:block;float:left;}
+	#top .header .h_l{width:360px;height:100%;float:left;}
+	#top .header .h_l li a{color:#111;}
+	#top .header .h_l li a:hover{color:#D45224}
+	#top .header li{float:left;padding:2px 20px;}
+	#top .header .input{height:24px;width:146px;border-radius:12px;border:none;margin-top:13px;text-indent:1.5em;}
+	#top .header .input:hover{box-shadow:0px 0px 5px solid #4C9ED9;}
+	#top .header .icn{position:relative;top:2px;left:-145px;}
+	#top .header .h_r{width:80px;height:100%;float:right;text-align:center;}
+	#top .header .h_r a{font-size:14px;color:#111;}
+	#top .header .h_r a:hover{color:#FF2424;transition:all 0.5s ease;}
+	/*banner区域*/
+    #banner{width:960px;height:210px;margin:30px auto;overflow:hidden;position:relative;}
+	#banner img{width:960px;height:210px;float:left;}
+	#banner .iconfont{font-size:30px;color:#ee6666}
+	#banner .prev{position:absolute;top:90px;left:0px;z-index:5}
+	#banner .next{position:absolute;top:90px;right:0px;z-index:5}
+	#banner .slide{width:1000%;height:210px;position:absolute;z-index:2;}
+	#banner .slide li{width:960px;height:210px;float:left;}
+	
+  
+  /*标题栏*/
+        #title{width:960px;height:50px;margin:0 auto;}
+		#title .t_l{width:300px;height:100%;float:left;line-height:50px;}
+		#title .t_l p{width:5px;height:50px;background:red;float:left}
+		#title .t_l h1{float:left;}
+		#title .t_r{width:660px;height:50px;float:right;line-height:48px;}
+		#title .t_r ul{height:50px;width:500px;float:right}
+		#title .t_r li{float:left;padding:8px;font-size:13px;}
+		#title .t_r li a{color:#999}
+		#title .t_r li a:hover{transition:all 0.1s ease;color:#D45224}
+	    /*content区域*/
+		#content{width:960px;height:486px;margin:10px auto;font-style:normal;}
+		#content .c_l{width:640px;height:480px;border-radius:5px;float:left}
+		#content .c_l img{border-radius:5px;transition:all 0.5s ease;}
+		#content .c_l img:hover{border:5px dashed #7E3A25;transform:translatex(5px);transition:all 0.5s ease;}
+		#content .c_r{width:303px;height:480px;border-radius:5px;float:right}
+		#content .c_r p .m1,.m2{width:303px;height:211px;}
+		#content .c_r .m1 img{max-width:100%;border-radius:5px;transition:all 0.5s ease;}
+		#content .c_r .m1 img:hover{transform:scale(0.9);transition:all 0.5s ease;}
+		#content .c_r .m2 img{max-width:100%;border-radius:5px;transition:all 0.5s ease;}
+		#content .c_r .m2 img:hover{transform:scale(0.9);transition:all 0.5s ease;}
+		/*music*/
+		 #music{width:960px;height:384px;margin:60px auto;font-style:normal;}
+		 #music .music_l{width:450px;float:left;}
+		 #music .music_r{width:450px;float:right;}
+		 #music .music_l h1{padding:5px;}
+		 #music .music_l h1:hover{text-decoration:underline;color:#D45224;cursor:pointer;}
+		 #music .music_l img{width:164px;height:164px;border-radius:164px;float:left;}
+		 #music .music_l img:hover{transform:rotate(3600deg);transition:all 0.5s ease;}
+		 #music .music_l .name{height:150px;width:220px;margin-top:10px;float:right;}
+		 #music .music_l .name .n1{color:#111;font-size:16px;font-family:"微软雅黑";padding:2px;}
+		 #music .music_l .name h2{color:#111;}
+		 #music .music_l .name h2:hover{color:#D45224}
+		 #music .music_l .name .time{margin-right:0px;margin-top:70px;font-size:15px;float:right}
+		 #music .music_l .about{height:160px;width:100%;clear:both;}
+		 #music .music_l .about .text{text-align:justify;color:#111;font-family:"微软雅黑"font-size:13px;text-indent:1em;line-height:22px;}
+		 #music .music_r img{width:198px;height:161px;float:left;margin-left:20px;border-radius:5px;transition:all 0.5s ease;}
+		 #music .music_r img:hover{transform:translatex(5px);transition:all 0.5s ease;}
+		 #music .music_r .s_l,.s_r{width:196px;height:100px;
+								   float:left;margin-top:20px;margin-left:22px;
+								   border-radius:5px;}
+		/*hot_active*/
+		#hot_active{width:1040px;height:540px;margin:20px auto;font-style:normal;}
+		#hot_active ul{width:336px;height:190px;float:left;margin:5px 5px;}
+		#hot_active  li img{height:190px;width:132px;float:left;display:block;border-radius:4px;}
+		#hot_active  li .t1{height:190px;width:195px;float:right}
+		#hot_active  li .t1 .team{width:185px;height:80px;padding:5px;}
+		#hot_active  li .t1 .team a{color:#111;}
+		#hot_active  li .t1 .team a:hover{color:#D45224}
+		#hot_active  li .t1 .adderss{margin-top:10px;} 
+		/*foot部分*/
+		#foot{height:252px;background:#222;font-style:normal;}
+		#foot ul{height:120px;width:300px;
+				  float:left;padding:60px 20px;
+				  margin-left:20px;
+				  text-align:center;color:#fff}
+		#foot ul li a{color:#fff;}
+		#foot ul li a:hover{color:#FF2424}
+		#foot ul li{line-height:30px;}
+		#foot .information{height:180px;width:240px;float:right;margin:30px 150px;}
+		#foot .information .focus{margin-left:30px;color:#fff;}
+		#foot .information .icon{width:135px;height:555px;display:block;
+							   background-image:url("image/luowang.png");
+							   float:left;
+							   }
+		#foot .information .qq{height:30px;width:30px;background-position:1650px 48px;}
+		#foot .information .weixin{height:35px;width:37px;background-position:9px 295px;}
+        #foot .information .xinlang{height:30px;width:29px;background-position:164px 77px;}
+		#foot .information .douhu{height:30px;width:30px;background-position:30px 106px;}
+		#foot .information .biaoyu{height:29px;width:137px;background-position:0px 0px;}
+  </style>
+ </head>
+ <body>
+   <!--头部-->
+   <div id="top">
+	  <div class="header">
+		    <a href="http://www.luoo.net/" target="_blank" class="logo" title="落网-独立音乐"></a>
+			<div class="h_l">
+			  <ul>
+				<li><a href="#" alt="" target="_blank">期刊</a></li>
+				<li><a href="#" alt="" target="_blank">单曲</a></li>
+				<li><a href="#" alt="" target="_blank">专栏</a></li>
+				<li><a href="#" alt="" target="_blank">活动</a></li>
+				<li><a href="#" alt="" target="_blank">APP</a></li>	 
+			  </ul>
+			 </div>
+			<!--搜索框-->
+			<input type="text" class="input">
+			<a href="#" class="icn"><i class="iconfont">&#xf00d9;</i></a>
+			<!--注册登录区域-->
+			<div class="h_r">
+				<a href="#">登陆</a>/
+				<a href="#">注册</a>
+			</div>
+		  </div>
+      </div>
+   </div>
+   
+   <!--banner区域-->
+   <div id="banner">
+	<a href="#" class="prev"><i class="iconfont">&#x3465;</i></a>
+	<a href="#" class="next"><i class="iconfont">&#x3464;</i></a>
+    <ul class="slide">
+	  <li><a href="#" alt="" target="_blank"><img src="image/09.jpg" alt=""></a></li>
+	  <li><a href="#" alt="" target="_blank"><img src="image/09-1.jpg" alt=""></a></li>
+	  <li><a href="#" alt="" target="_blank"><img src="image/09-2.jpg" alt=""></a></li>
+	  <li><a href="#" alt="" target="_blank"><img src="image/09-3.jpg" alt=""></a></li>
+	  <li><a href="#" alt="" target="_blank"><img src="image/09-4.jpg" alt=""></a></li>
+	  <li><a href="#" alt="" target="_blank"><img src="image/09-5.jpg" alt=""></a></li>
+	</ul>
+   </div>
+  
+   <!--标题栏-->
+
+   <div id="title">
+		<div class="t_l">
+			<p class="tb"><p>
+			<h1>音乐期刊</h1>
+		</div>
+		<div class="t_r">
+			<ul>
+				 <li><a href="#">独立音乐</a></li> 
+				 <li><a href="#">民谣</a></li> 
+				 <li><a href="#">金属</a></li> 
+				 <li><a href="#">英伦</a></li> 
+				 <li><a href="#">电子</a></li> 
+				 <li><a href="#">流行</a></li> 
+				 <li><a href="#">后摇</a></li> 
+				 <li><a href="#">暗潮</a></li> 
+				 <li><a href="#">迷幻</a></li> 
+				 <li><a href="#">氛围</a></li> 
+				 <li><a href="#">更多<i><i></a></li>		
+			</ul>
+		</div>
+   </div>
+   <!--content区域-->
+   <div id="content">
+      <div class="c_l">
+		<a href="#" target="_blank"><img src="image/10.jpg" alt=""></a>
+		<p>vol.740 狂想曲</p>
+	  
+	  </div>
+	  <div class="c_r">
+		<p class="m1"><a href="#"title="遇见-落网"><img src="image/11.jpg"alt="遇见"></a></p>
+		<p>vol.740 遇见</p>
+	    <p class="m2"><a href="#"title="深处-落网"><img src="image/12.jpg"alt="深处"></a></p>
+		<p >vol.740 深处</p>
+	  </div> 
+   </div>
+   <!--music区域-->
+   <div id="music">
+     <div class="music_l">
+		<h1>原创推荐</h1>
+		<img src="image/00.jpg">
+		<div class="name">		
+			<h2>Trek in the void<h2>
+			<p class="n1">逆耳</p>
+			<p class="time">2015-07-31</p>
+		</div>
+		<div class="about">
+		    <div class="text">逆耳迷恋在去掉人声的大量器乐音墙中构筑起飘逸而错落的空间感，由细流到汹涌的情感放任于自我审视的声响景观。落网首发单曲《Trek in the void》（真空迷航）来自逆耳全长专辑《雨昼》。真空迷航是一种现代性的叛逆产物，用幻境的素描来描摹易逝的时间感，抒发不被信任的感知抑或来自早已被现代化城市生活所忽视的内心呜咽。专辑所收录的五首歌曲经过四年沉淀在录制中都进行了大幅调整和编排，不矫揉造作，不虚张声势.</div>
+		</div>
+	 </div>
+	 <div class="music_r">
+		<img src="image/01.jpg">
+		<img src="image/02.jpg">
+		<div class="s_l">
+			迪伦是如何变成迪伦的 ──【探寻真实的鲍勃·迪伦】
+            小阅读Random
+		</div>
+		<div class="s_r">
+			鲍勃脑子里的五十四分钟 ──【探寻真实的鲍勃·迪伦】
+            小阅读Random
+		</div>
+	 </div> 
+   </div>
+   <!--hot_active部分-->
+   <div id="hot_active">
+	<h1>热门活动</h1>
+	<ul>
+       <li>
+		   <img src="image/03.jpg">
+		   <div class="t1">
+					<div class="team">
+					  <a href="#">
+						  <p>新浪潮乐队 dreamki</p>
+						  <p>2015重庆分享会<p>
+					  </a>
+					</div>
+				   <div class="adderss">
+					  <p>时间：2015-08-07</p>
+					  <p>地点：重庆</p>
+					  <p>场所：坚果俱乐部</p>
+					  <p>费用：50元 - 60元</p>	  
+				   </div>
+			 </div>
+	   </li>
+	  </ul>
+	  <ul>
+		<li>
+		   <img src="image/04.jpg">
+		   <div class="t1">
+					<div class="team">
+					  <a href="#">赵卫 指行者乐队2015全国巡演</a>
+					</div>
+				   <div class="adderss">
+					  <p>时间：2015-08-07</p>
+					  <p>地点：重庆</p>
+					  <p>场所：坚果俱乐部</p>
+					  <p>费用：50元 - 60元</p>	  
+				   </div>
+			 </div>
+	   </li>
+	  </ul>
+
+	  <ul>
+		<li>
+		   <img src="image/05.jpg">
+		   <div class="t1">
+					<div class="team">
+					  <a href="#">吉普赛之夜·联合专场<a/>
+					</div>
+				   <div class="adderss">
+					  <p>时间：2015-08-07</p>
+					  <p>地点：重庆</p>
+					  <p>场所：坚果俱乐部</p>
+					  <p>费用：50元 - 60元</p>	  
+				   </div>
+			 </div>
+	   </li>
+	  </ul>
+
+      <ul>
+		<li>
+		   <img src="image/06.jpg">
+		   <div class="t1">
+					<div class="team">
+					  <a href="#">华语说唱新指标 Lu1《成长之诗》2015巡演</a>
+					</div>
+				   <div class="adderss">
+					  <p>时间：2015-08-07</p>
+					  <p>地点：重庆</p>
+					  <p>场所：坚果俱乐部</p>
+					  <p>费用：50元 - 60元</p>	  
+				   </div>
+			 </div>
+	   </li>
+	  </ul>
+	  <ul>
+		<li>
+		   <img src="image/07.jpg">
+		   <div class="t1">
+					<div class="team">
+					  <a href="#">蒋明与空山乐队2015夏季巡演</a>
+					</div>
+				   <div class="adderss">
+					  <p>时间：2015-08-07</p>
+					  <p>地点：重庆</p>
+					  <p>场所：坚果俱乐部</p>
+					  <p>费用：50元 - 60元</p>	  
+				   </div>
+			 </div>
+	   </li>
+	  </ul>
+	  <ul>
+		<li>
+		   <img src="image/08.jpg">
+		   <div class="t1">
+					<div class="team">
+					  <a href="#">【落网：独立计划】 “消失的记忆” 音乐沙龙【落网：独立计划】 “消失的记忆” 音乐沙龙</a>
+					</div>
+				   <div class="adderss">
+					  <p>时间：2015-08-07</p>
+					  <p>地点：重庆</p>
+					  <p>场所：坚果俱乐部</p>
+					  <p>费用：50元 - 60元</p>	  
+				   </div>
+			 </div>
+	   </li>
+	  </ul>
+  </div> 
+ <!--底部-->
+ <div id="foot">
+	<ul>
+		<li><a href="#">关于</a></li>
+		<li><a href="#">关于落网</a></li>
+		<li><a href="#">加入我们</a></li>
+		<li><a href="#">联系合作</a></li>
+		<li><a href="#">反馈建议</a></li>
+		<li><a href="#">友情链接</a></li>
+	</ul>
+	<ul>
+		 <li><a href="#">APP</a></li>
+		 <li><a href="#">for iPhone</a></li>
+		 <li><a href="#">for Android</a></li>
+		 <li><a href="#">for Windows Phone 8</a></li>
+	</ul>
+	<div class="information">
+		<p class="focus">关注落网</p>
+			<a href="#"><span class="icon qq"></span></a>
+			<a href="#"><span class="icon weixin"></span></a>
+			<a href="#"><span class="icon xinlang"></span></a>
+			<a href="#"><span class="icon douhu"></span></a>
+			<br><br><br>
+			<a href="#"><span class="icon biaoyu"></span></a>
+    </div>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+   <script type="text/javascript">
+		$(function(){
+			//上一页
+			$(".prev").click(function(){
+				$(".slide").animate({"left":"-960px"},500,function(){
+					$(".slide").prepend($(".slide li:last"));//将最后一个li追加到最前面
+					$(".slide").css("left","0px");
+				});
+			});
+			//下一页
+			$(".next").click(function(){
+				$(".slide").append($(".slide li:first"));
+				$(".slide").css("left","0px");
+				$(".slide").animate({"left":"-960px"},500);
+			})
+		});
+		//自动播放
+		function autoPlay(){
+			$(".slide").append($(".slide li:first"));
+			$(".slide").css("left","0px");
+			$(".slide").animate({"left":"-960px"},500)
+		}
+		autoPlay();
+		var setTime = setInterval(autoPlay,2000);
+		$(".prev,.next").hover(function(){
+			clearInterval(setTime);
+		},function(){
+			setTime = setInterval(autoPlay,2000);//鼠标移开时，自动播放
+		});
+   </script>
+ </body>
+</html>

@@ -1,0 +1,251 @@
+<!--
+    @:author:zhenchuan.wang
+	@:time:2016/7/5
+	@:descoration:cctv五一一起游
+
+开发坏境：editplus
+运用的技术:javascript html5 css3 
+开发周期：5天
+项目描述:1:该小项目主要实现了一个景区的印象评分评价，导入视频/上传照片，评论，上传图片视频成功
+         2:首页的出场动画，主要是css3的@keyframes 动画名称 animation transform translate rotate opacity -webkit-animation-fill-mode:forwards;  -webkit-transform-origin:left bottom  infinite alternate linear
+	     3:景区的评分，提交时，必须评分之后，在可以提交，进行了js的判断
+		 4:提交完成后，经过一个遮罩层，到达新闻线索，导入视频图片等，导入图片成功后，进行评论，在上传图片或者视频，进入首页，然后重新评价，再次进入评分系统
+         
+		 该项目的主要难点是：手机端的点击事件与pc端的有差别
+		                     页面之间的跳转逻辑顺序的先后
+                          
+-->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>cctv五一一起游</title>
+<meta name="viewport" content="width=640,user-scalable=no" />
+<link href="css/cctv.css" rel="stylesheet" />	
+</head>
+<body>
+<!--首页部分开始-->
+<section class="page pageShow" id="welcome">
+	<div class="tree">
+    	<img src="img/tree.jpg" />
+        <div class="welcome2">
+        	<img src="img/title.png" />
+            <span class="shake"></span>
+        </div>
+        <img src="img/title2.png" class="tree3" />
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+    </div>
+    <h1 id="logo">
+    	<img src="img/logo.png" />
+    </h1>
+</section>
+<!--首页部分结束-->
+<!--结束重新评价部分开始-->
+<section class="page" id="over">
+	<div class="tree">
+    	<img src="img/tree.jpg" />
+        <div class="welcome2">
+        	<img src="img/tranks2.png" />
+        </div>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+        <span class="cloud"></span>
+    </div>
+    <input type="button" value="重新评价" class="btn submit" />
+</section>
+<!--重新评价结束-->
+<!--视频添加图片评价开始-->
+<section class="page" id="form">
+	<section class="tags" id="formTag">
+        <h2>给视频添加标签</h2>
+        <label>
+            <input type="radio" name="tags2" value="服务好" />
+            <span>服务好</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="景色赞" />
+            <span>景色赞</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="千篇一律" />
+            <span>千篇一律</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="看人海" />
+            <span>看人海</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="挤爆了" />
+            <span>挤爆了</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="服务好" />
+            <span>如厕难</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="景色赞" />
+            <span>贼贵</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="千篇一律" />
+            <span>累挂了</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="看人海" />
+            <span>在来一次</span>
+        </label>
+        <label>
+            <input type="radio" name="tags2" value="挤爆了" />
+            <span>在也不来</span>
+        </label>
+    </section>
+	<!--评论区开始-->
+    <textarea class="formText" placeholder="（选填：说点什么呢~~）" rows="5"></textarea>
+	<!--评论区结束-->
+    <input type="tel" class="formText" placeholder="（选填：说点什么呢~~）"/>
+    <input type="button" value="上传" class="btn" />
+</section>
+<!--视频添加图片结束-->
+<!--新闻线索开始-->
+<section class="page" id="news">
+	<img src="img/news.png" />
+    <h2>请上传旅游投诉以及突发事件线索</h2>
+    <section class="file">
+    	<label>
+        	<input type="file" />
+            <span>导入视频</span>
+        </label>
+        <label>
+        	<input type="file" />
+            <span>上传照片</span>
+        </label>
+    </section>
+	<!--隐藏的提示信息-->
+    <p class="info"></p>
+</section>
+<!--新闻线索结束-->
+<!--阴影遮罩层开始-->
+<section class="page" id="mask"></section>
+<!--阴影遮罩层结束--->
+<!--图片轮播部分开始-->
+<section class="page pageShow" id="index">
+	<section class="scrollWrap">
+        <section id="tabPic">
+            <ul id="picList">
+                <li><img src="img/1.jpg" /></li>
+                <li><img src="img/2.jpg" /></li>
+                <li><img src="img/3.jpg" /></li>
+                <li><img src="img/4.jpg" /></li>
+                <li><img src="img/5.jpg" /></li>
+            </ul>
+            <section class="picMask">
+                <p>成都九寨沟景区</p>
+                <nav>
+                    <a href="javascript:;" class="active"></a>
+                    <a href="javascript:;"></a>
+                    <a href="javascript:;"></a>
+                    <a href="javascript:;"></a>
+                    <a href="javascript:;"></a>
+                </nav>
+            </section>
+        </section> 
+        <!--<a href="javascript:;" class="newsBtn">
+        	<em>新闻线索</em>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>-->
+        <a href="javascript:;" class="newsBtn">新闻线索</a>
+        <section id="score">
+            <h2>给景区评分</h2>
+            <ul class="scoreList">
+                <li>
+                    <span>综合印象</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0" />
+                </li>
+                <li>
+                    <span>服务指数</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0" />
+                </li>
+                <li>
+                    <span>消费指数</span>
+                    <nav>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </nav>
+                    <input type="hidden" value="0" />
+                </li>
+            </ul>
+        </section>
+        <section class="tags" id="indexTag">
+            <h2>给景区添加标签</h2>
+            <label>
+                <input type="radio" name="tags" value="服务好" />
+                <span>服务好</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="景色赞" />
+                <span>景色赞</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="千篇一律" />
+                <span>千篇一律</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="看人海" />
+                <span>看人海</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="挤爆了" />
+                <span>挤爆了</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="服务好" />
+                <span>如厕难</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="景色赞" />
+                <span>贼贵</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="千篇一律" />
+                <span>累挂了</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="看人海" />
+                <span>在来一次</span>
+            </label>
+            <label>
+                <input type="radio" name="tags" value="挤爆了" />
+                <span>再也不来</span>
+            </label>
+        </section>
+        <p class="info"></p>
+        <input type="button" value="提交" class="btn submit" />
+    </section>
+</section>
+<!--图片轮播部分结束-->
+
+        <script src="js/cctv.js" type="text/javascript"></script>
+
+</body>
+</html>

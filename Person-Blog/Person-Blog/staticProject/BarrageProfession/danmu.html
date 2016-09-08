@@ -1,0 +1,132 @@
+<!--           
+  1：步骤：在浏览器中怎么插入图片:<img  src="图片地址"width="宽度"height="高度" alt="描述对象"/>
+  2：怎么是浏览器的背景颜色为黑色,在body里面设置:background:#000;
+  3:怎么让图片居中对齐：方法1：注意图片标签img是行内元素，添加宽度和高度是不起作用的，要想起作用，要变成块集元素display:block;
+    让一个层居中对齐：margin: 0 auto
+	方法2：使用固定定位position:fixed;注意有两个参数left:45%;距离浏览器的左边的距离，top:0px;距离浏览器上边的距离
+
+
+
+
+-->
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>弹幕表白</title>
+  <style type="text/css">
+    *{padding:0px;margin:0px;}
+    body{font-size:12px; font-family:"微软雅黑";background:#000;}
+	img.gb{position:fixed;/*固定*/left:45%;top:0px;-webkit-animation:bd 5s ease-in-out infinite;/*动画名称 时间 运动速度 永远无限的运动*/}
+	@-webkit-keyframes bd{
+	   /*刚开始往左摆30度*/
+	   0%{-webkit-transform:rotate(30deg);-webkit-transform-origin:center top;}
+	   50%{-webkit-transform:rotate(-30deg);-webkit-transform-origin:center top;}
+	   100%{-webkit-transform:rotate(30deg);-webkit-transform-origin:center top;}
+    }
+	.gray{width:100%;height:100%;background:rgba(0,0,0,0.3);position:fixed;/*固定*/left:0px;top:0px;display:none;/*隐藏遮罩层，那么整个就看不到了的,注意结尾的分号不能省*/}
+	.gray .Con{width:560px;height:30px;/*border:1px solid red;*//*加上边框*/position:fixed;left:25%;bottom:130px;}
+	/*注意固定标签下一级的使用span.col*/
+    .gray .Con span.col{width:80px;height:30px;background:#F3F3F3;display:block;/*块集元素*/float:left;border-radius:4px 0px 0px 4px;font-size:12px;line-height:30px;text-indent:10px;/*首行缩进*/}
+    .gray .Con p.txt{width:400px;height:30px;background:#fff;float:left;/*左浮动*/}
+    .gray .Con span.but{width:80px;height:30px;background:#F4354B;display:block;/*块集元素*/float:left;line-height:30px;text-indent:10px;color:#fff;text-align:center;/*水平居中*/border-radius:0px 4px 4px 0px;}
+	.gray .Con span.col font{width:10px;height:10px;display:block;background:red;position:absolute;/*绝对定位*/top:9px;left:40px;border:1px solid #000/*粗细 风格 颜色*/}
+   .gray .Con ul{width:80px;position:absolute;border:1px solid red;bottom:28px;left:0px;display:none;/*隐藏ul*/}
+   .gray .Con ul li{list-style:none;width:80px;height:30px;font-size:12px;line-height:30px;text-indent:10px;background:#F3F3F3;position:relative;}
+   .gray .Con ul li font{width:10px;height:10px;border:1px solid #000;display:block;position:absolute;top:10px;left:40px;}
+   .gray .Text{width:600px;height:500px;margin:100px auto;/*水平居中*/color:red;font-size:20px;line-height:40px;text-align:center;}
+  </style>
+ </head>
+ <body>
+         <!--insert img start -->
+		 <img src="images/xx.png" class="gb" width="200"height="200"alt="弹幕表白"title="弹幕表白技术"/>
+		 <!--end insert img -->
+		 <!--遮罩层 -->
+         <div class="gray">
+		    <div class="Con">
+			    <span class="col">颜色<font></font></span>
+				<!--利用p标签做输入的内容-->
+				<p class="txt"contenteditable="true" ></p>
+				<span class="but">清空在写</span>
+				<ul>
+				   <!--data-color表示的意思点击颜色，获取到颜色通过自定义来获取 -->
+				   <li data-color="#ff6600">颜色<font style="background:#ff6600"></font></li>
+				   <li data-color="#ff0099" class="xz">颜色<font style="background:#ff0099"></font></li>
+				   <li data-color="#cc00ff">颜色<font style="background:#cc00ff"></font></li>
+                   <li data-color="#cc0066">颜色<font style="background:#cc0066"></font></li>	
+				   <li data-color="#66ff66">颜色<font style="background:#66ff66"></font></li>
+				</ul>
+		    <!--放我们的文字，输入框内输入文字-->
+			</div>
+		    <div class="Text"></div>
+		 </div>
+         // 引入音乐，播放音乐
+		 <audio src="1.mp3" controls  id="Music"></audio>
+		
+		 <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+         <!--引入花瓣-->
+		 <script src="js/snowfall.jquery.js"></script>
+		 <script>
+		     $(document).snowfall('clear');
+			 $(document).snowfall({
+				 image:"images/huaban.png",
+				 flakeCount:30,
+				 minSize:5,
+				 maxSize:22
+			 });
+		 
+		 </script>
+		 
+		 <script type="text/javascript">
+      
+		 /*$是查找的意思*/
+		 $("img.gb").click(function(){
+		   $(".gray").show(); //点击弹幕，显示遮罩层
+		   $("#Music").get(0).play(); // get(0)是获得音乐的意思
+		 });
+		 
+		 /*点击颜色时，显示和隐藏,这样一层一层的为什么不行？
+		 $(".gray .Con span.col").click(finction(){
+		    $(".Con ul").toggle("slow");
+		 });
+		 */
+		 // 点击颜色时，显示和隐藏
+		 $("span.col").click(function(){
+		   $(".Con ul").toggle("slow");
+		 });
+		// 点击颜色时，更换颜色
+		$(".Con ul li").click(function(){
+		   var col=$(this).data("color");
+		   $("span.col font").css("background-color",col);
+		   $(this).addClass("xz").silbings().removeClass("xz"); // 指定的加上class="xz",silbings指的是找到同类型的元素，其他的移除
+		   $(".Con ul").toggle("slow"); // 隐藏
+		});
+		//当我们抬起键盘时
+		// 声明一个数组，把上一次的回车键的内容给保存起来
+		var arr=[];
+		$("p.txt").keyup(function(e){
+			var col=$(".Con ul li.xz").data("color"); // 定义一个变量col 找到Con 下的ul下的li下的xz改变它的颜色
+		    var txt="<span style='color:"+col+"'>"+$(this).text()+"</span>";// 获取输入框的内容
+			$(".Text").html(arr.join("").toString()+txt); // 保证输入框的内容同步
+		
+		// 判断有没有回车键
+		// keyCode 的值为13时，说明是回车键
+		if(e.keyCode==13){
+			//清空输入框的内容
+			$(this).empty(); // 清空输入框的内容
+            arr.push("<p>"+txt+"</p>"); // 加上一个p标签实现当在输入框内输入文字时，按回车键，实现文字输出在屏幕上进行换行的效果
+			var html=""; // 按回车键，输入框的文字出去后，输入框空的状态
+		    for(var i=0;i<arr.length;i++){
+                   html+=arr[i];
+				}
+				$(".Text").html(html);
+		    }
+		}); // 注意这个分号
+
+		 </script>
+ </body>
+</html>

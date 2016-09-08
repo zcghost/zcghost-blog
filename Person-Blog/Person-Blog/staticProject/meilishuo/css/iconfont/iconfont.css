@@ -1,0 +1,52 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot'); /* IE9*/
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff') format('woff'), /* chrome、firefox */
+  url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-weixin:before { content: "\e659"; }
+.icon-qq:before { content: "\e699"; }
+.icon-denglu:before { content: "\e62f"; }
+.icon-iconfonticonfontzhuce:before { content: "\e645"; }
+.icon-gouwuche:before { content: "\3434"; }
+.icon-gouwuche1:before { content: "\f0079"; }
+.icon-dingdan:before { content: "\e68f"; }
+.icon-appxiazai:before { content: "\e671"; }
+.icon-arrow:before { content: "\e608"; }
+.icon-jiantou:before { content: "\e656"; }
+.icon-jiantou1:before { content: "\e652"; }
+.icon-jiantou2:before { content: "\f001a"; }
+.icon-jiantou3:before { content: "\e632"; }
+.icon-jiantou4:before { content: "\f0033"; }
+.icon-jiantou5:before { content: "\e63b"; }
+.icon-jiantou6:before { content: "\e630"; }
+.icon-jiantou7:before { content: "\e6c0"; }
+.icon-jiantou8:before { content: "\e601"; }
+.icon-youjiantou:before { content: "\3435"; }
+.icon-jiantou0101:before { content: "\e646"; }
+.icon-2014082601545126easyiconnet:before { content: "\e600"; }
+.icon-iconfontjiantou:before { content: "\e60b"; }
+.icon-sousuo:before { content: "\3465"; }
+.icon-sousuo1:before { content: "\f000a"; }
+.icon-fanhuidingbu:before { content: "\e67d"; }
+.icon-fanhuidingbu1:before { content: "\e631"; }
+.icon-fanhuidingbu2:before { content: "\e672"; }
+.icon-dianhua:before { content: "\e601"; }
+.icon-mobilephone:before { content: "\e603"; }
+.icon-weibiaoti1:before { content: "\e600"; }
+.icon-xinlangweibo:before { content: "\f004e"; }
+.icon-qqkongjian:before { content: "\e63b"; }
+.icon-qqkongjian1:before { content: "\e601"; }
+.icon-qqkongjian2:before { content: "\e647"; }
+.icon-tengxunweibo:before { content: "\e648"; }

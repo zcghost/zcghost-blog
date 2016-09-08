@@ -1,0 +1,987 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>天猫页面项目</title>
+  <link rel="stylesheet" href="css/font/iconfont.css">
+  <!--2015/8/7-->
+  <style>
+    *{padding:0px;margin:0px;}
+	body{background:#F5F5F5;}
+	ul li{list-style:none;list-style-image:none;}
+	a{text-decoration:none;}
+	#box{height:126px;background:#F2F2F2;}
+	#box .watch{width:990px;height:100px;margin:0 auto;}
+	/*导航栏左边*/
+	#box .slider{height:26px;width:1190px;margin:0 auto;}
+    #box .slider .s_l{width:316px;float:left;}
+    #box .slider .s_l ul{line-height:26px;}
+	#box .slider .s_l li{float:left;font-size:12px;padding:0px 6px;}
+	#box .slider .s_l a{color:#666;}
+	#box .slider .s_l a:hover{color:#C40000;text-decoration:underline;}
+    /*导航栏右边*/
+	#box .slider .s_r{width:690px;float:right;line-height:26px;}
+	#box .slider .s_r ul li{float:left;padding:0px 8px;position:relative;}
+	#box .slider .s_r ul li a{font-size:12px;color:#666;}
+	#box .slider .s_r ul li a:hover{color:#C40000;text-decoration:underline;}
+	#box .slider .s_r ul li .iconfont{color:#c40000;font-size:14px;}
+	#box .slider .s_r ul li .list_1{position:absolute;width:80px;height:50px;background:#fff;
+	                                top:26px;left:0px;font-size:12px;text-align:center;
+									display:none;border:1px solid #F2F2F2;color:#666;}
+	#box .slider .s_r ul li .list_1 a:hover{color:#C40000;text-decoration:underline;}
+	/*小三角形*/
+	#box .slider .s_r ul li a .trangle{	display:inline-block;
+										 border-top:5px solid black;
+										 border-right:5px solid transparent;
+										 border-bottom:5px solid transparent;
+										 border-left:5px solid transparent;
+										 position:relative;
+										 top:5px;left:3px;}
+  #box .slider .s_r ul li:hover .list_1{display:block;background:#fff;box-shadow:0px 0px 10px #F2F2F2;}
+  #box .slider .s_r ul li:hover .trangle{transform:rotate(180deg)translatey(5px)}
+  #box .slider .s_r ul li .list_2{  position:absolute;width:132px;height:185px;background:#fff;
+	                                top:26px;left:0px;font-size:12px;
+									border:1px solid #F2F2F2;color:#666;display:none;}
+ #box .slider .s_r ul li .list_2 ul li{float:left;font-size:12px;color:#666;}
+ #box .slider .s_r ul li .list_2 ul .h3{text-indent:0.5em;}
+ #box .slider .s_r ul li:hover .list_2{display:block;background:#fff;box-shadow:0px 0px 10px #f2f2f2;}
+ /*网站导航*/
+#box .slider .s_r .more .list_3{position:absolute;width:1191px;height:200px;background:rgba(255,255,255,0.97);
+                                left:-1082px;top:26px;display:none;}
+#box .slider .s_r .more .list_3 .u_1,.u_2,.u_3,.u_4{float:left;width:200px;height:200px;margin:10px 20px;}
+#box .slider .s_r .more .list_3 h3{color:#F66A00;}
+#box .slider .s_r .more .list_3 li{float:left;color:#111;}
+#box .slider .s_r .more .list_3 .lf60{margin-left:90px;}
+#box .slider .s_r li:hover .list_3{display:block;}
+/*搜索区域*/
+#header{height:85px;background:#fff;}
+#header .warp{width:1190px;height:100%;margin:0 auto;}
+#header .warp .warp_l{width:320px;height:100%;float:left;}
+#header .warp .warp_r{width:870px;height:100%;float:left;}
+#header .warp .warp_r .c_bx{width:550px;height:100%;float:left;}
+#header .warp .warp_r .c_bx .search{width:530px;height:35px;border:5px solid #C40000;margin-top:18px;}
+#header .warp .warp_r .c_bx .search input{width:450px;height:35px;border:none;text-indent:0.3em;color:#333;font-size:14px;}
+#header .warp .warp_r .c_bx .search a{display:inline-block;width:80px;height:35px;background:#C40000;
+		                                text-align:center;line-height:35px;color:#fff;}
+#header .warp .warp_r .c_bx ul li{float:left;padding:1px 4px;}
+#header .warp .warp_r .c_bx ul li a{font-family:"微软雅黑";font-size:14px;color:#666;}
+#header .warp .warp_r .c_bx ul li a:hover{text-decoration:underline;}
+#header .warp .warp_r .c_bx ul li .c1{color:#C40000;}
+#header .warp .warp_r .c_bx ul li .c1:hover{text-decoration:underline;}
+		
+#header .warp .warp_r .ad{width:320px;height:100%;float:left;}
+#header .warp .warp_r .ad img{margin-left:130px;transition:all 0.5s ease;}
+#header .warp .warp_r .ad img:hover{transform:translatex(-20px);transition:all 0.5s ease;}
+
+/*分类标题区*/
+#shopTitle{height:34px;background:#fff;}
+#shopTitle .title{width:1190px;background:#fff;height:38px;margin:0 auto;}
+#shopTitle .title .t_l{width:190px;height:36px;background:#C40000;float:left;
+		                       text-align:center;line-height:34px;color:#fff;font-weight:bold;}
+#shopTitle .title .t_r{width:810px;float:left;}
+#shopTitle .title .t_r li{float:left;line-height:34px;}
+#shopTitle .title .t_r li a{display:inline-block;padding:0px 15px}
+#shopTitle .title .t_r li a{color:#111;font-weight:bold;}
+#shopTitle .title .t_r li a:hover{color:#c40000;text-decoration:underline;}
+ /*左端商品分类区域*/
+    #bigBox{height:500px;margin-top:4px;}
+	#bigBox .main_box{width:1190px;height:480px;margin:0 auto;}
+	#bigBox .main_box .m_l{width:190px;height:480px;background:url("image/index.png");
+	                       background-size:cover;float:left;}
+	#bigBox .main_box .m_l ul{overflow:hidden;}
+	#bigBox .main_box .m_l li{height:30px;width:100%;line-height:30px;}
+	#bigBox .main_box .m_l li:hover{background:#C40000;}
+    #bigBox .main_box .m_l li a{color:#fff;font-size:12px;display:block;padding-left:20px}
+	#bigBox .main_box .m_l li .icon{display:inline-block;
+	                            border-top:5px solid transparent;
+	                            border-right:5px solid transparent;
+								border-bottom:5px solid transparent;
+								border-left:5px solid #fff;
+								position:relative;
+								top:-31px;
+								left:175px;
+								display:none;
+								}
+	#bigBox .main_box .m_l li .c2{font-size:20px;margin-right:10px;}
+	#bigBox .main_box .m_l li:hover .icon{display:block;margin-top:10px;}
+    #bigBox .main_box .m_l li a:hover{transform:translatex(5px);}
+	/*banner区域*/
+	 #bigBox .main_box .m_c{width:810px;height:480px;float:left;overflow:hidden;position:relative;}
+	 #bigBox .main_box .m_c .slide{width:1000%;height:480px;position:absolute;z-index:-2}
+	 #bigBox .main_box .m_c .slide li{width:810px;height:480px;float:left;} 
+	#bigBox .main_box .m_r{width:190px;height:480px;float:left;}
+	#bigBox .main_box img{border:none;}
+   /*热门品牌*/
+	  #container{width:1190px;height:379px;margin:0 auto;}
+	  #container .cnt_h{height:50px;}
+	  #container .cnt_h .hl{width:192px;background:linear-gradient(#F5F5F5,#C19578);
+	                         line-height:50px;text-align:center;float:left;}
+	  #container .cnt_h .hl .hot1{font-weight:bold;}
+	  #container .cnt_h .hl .hot2{font-style:italic;}
+
+	  #container .cnt_h .hr{width:998px;height:100%;background:#fff;float:left;}
+	  #container .cnt_h .hr .hr_l{width:300px;height:100%;float:left;}
+	  #container .cnt_h .hr .hr_l p{float:left;margin-top:18px;padding:0px 10px;}
+	  #container .cnt_h .hr .hr_l p a{font-size:12px;font-weight:bold;color:#111;}
+	  #container .cnt_h .hr .hr_l .p1{text-decoration:underline;}
+	  #container .cnt_h .hr .hr_l p a:hover{text-decoration:underline;color:#C40000;}
+	  #container .cnt_h .hr .hr_r{width:150px;height:100%;float:right;text-align:center;line-height:50px;}
+	  #container .cnt_h .hr .hr_r span{font-size:14px;padding:4px;}
+	  #container .cnt_h .hr .hr_r span a{color:#111;}
+	  #container .cnt_h .hr .hr_r span a:hover{color:#C40000;text-decoration:underline;}
+	  #container .cnt_h .hr .hr_r .iconfont{margin-right:5px;}
+      #container .tip_src{float:left;width:192px;height:349px;}
+	  #container .tip_c{width:816px;height:329px;background:#fff;float:left}
+	  #container .tip_c li{float:left;width:134px;height:80px;border:1px solid #ccc;text-align:center;}
+	  #container .tip_c img{height:60px;width:90px;margin:10px auto;transition:all 0.5s ease;border:none;}
+	  #container .tip_c li img:hover{transform:scale(0.9);transition:all 0.5s ease;border:3px dotted #ccc;}
+	  #container .tip_r{width:182px;height:329px;background:gray;float:left;}
+	  #container .tip_r img{max-width:100%;}
+	/*楼层*/
+      .floor{width:1190px;height:420px;margin:20px auto;}
+	  .img_1{height:90px;width:100%;margin:20px auto;text-align:center;}
+	  .img_1 img{transition:all 0.5s ease;}
+	  .img_1 img:hover{transform:scale(1.1)translatex(-5px);transition:all 0.5s ease;}
+	  .floor img{border:none;}
+	 /*1楼*/
+	  .floor .fr_l{width:191px;height:420px;background:#FAFAF8;float:left;}
+      .floor .fr_l .icon{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");}
+	  .floor .fr_l .f1{width:191px;height:87px;background-position:-2px -3px;}
+	  .floor .fr_l .fl_banner{height:208px;width:100%;background:#fff;text-align:center;}
+	  .floor .fr_l .fl_banner img{margin-top:10px;}
+      
+	  .floor .fr_l .flb li{float:left;padding:11px 15px;text-align:center;line-height:5px;}
+      .floor .fr_l .flb li a{color:#111;font-size:12px;font-weight:bold;padding-left:13px;}
+	  .floor .fr_c{width:398px;height:420px;float:left;}
+	  .floor .fr_c img{max-width:100%;height:100%;}
+
+	  .floor .fr_r{width:601px;height:420px;background:#e5e5e5;float:left;overflow:hidden;}
+	  .floor .fr_r li{float:left;margin:-1px 1px;}
+	  .floor .fr_r li .img2{width:198px;height:255px;border:none;}
+	  .floor .fr_r li a .img3{width:198px;height:163px;border:none;}
+	  .floor .fr_r li img{transition:all 0.5s ease;}
+	  .floor .fr_r li img:hover{transform:translatex(-2px);transition:all 0.5s ease;} 
+/*--2楼--*/
+		.floor .fr_l .icon2{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");}
+        .floor .fr_l .f2{width:191px;height:90px;background-position:-3px -109px;}
+
+/*--3楼--*/
+.floor .fr_l .icon3{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");}
+.floor .fr_l .f3{width:191px;height:90px;background-position:-3px -220px;}
+/*--4楼--*/
+.floor .fr_l .icon4{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");}
+.floor .fr_l .f4{width:191px;height:90px;background-position:0px -337px;}	
+/*--5楼--*/
+.floor .fr_l .icon5{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f5{width:191px;height:90px;background-position:0px -448px;}
+/*--6楼--*/
+.floor .fr_l .icon6{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f6{width:191px;height:90px;background-position:0px -559px;}
+/*--7楼--*/
+.floor .fr_l .icon7{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f7{width:191px;height:90px;background-position:0px -670px;}	
+/*--8楼--*/
+.floor .fr_l .icon8{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f8{width:191px;height:90px;background-position:0px -781px;}	
+/*--9楼--*/
+.floor .fr_l .icon9{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f9{width:191px;height:90px;background-position:0px -892px;}
+.floor .fr_l .flbn9{height:208px;width:100%;position:relative;}
+.floor .fr_l .flbn9 li{float:left;padding:15px 10px;text-align:center;font:14px/15px "微软雅黑";font-weight:bold;}
+.floor .fr_l .flbn9 li a{color:#111;}
+.floor .fr_l .flbn9 li a:hover{text-decoration:underline;}
+.floor .fr_l .icon9 .ft{position:relative;top:20px;left:70px;font-size:50px;}	  
+.floor .fr_l .flbn_9 li{float:left;padding:5px 10px;}
+.floor .fr_l .flbn_9 li a{color:#111;font-size:12px;font-weight:bold;}
+.floor .fr_l .flbn_9 li a:hover{color:#C40000;text-shadow:1px 1px 5px #ccc;text-decoration:underline;}
+/*--10楼--*/
+.floor .fr_l .icon10{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f10{width:191px;height:90px;background-position:0px -1003px;}
+/*--11楼--*/
+.floor .fr_l .icon11{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f11{width:191px;height:90px;background-position:0px -1114px;}
+/*--12楼--*/
+.floor .fr_l .icon12{display:inline-block;width:191px;height:1400px;background-image:url("image/floor.png");clear:both;}
+.floor .fr_l .f12{width:191px;height:90px;background-position:0px -1225px;}
+/*底部信息*/
+#information{height:436px;}
+#information .ins{width:1190px;height:312px;margin:0 auto;}
+#information .ins .icon{display:inline-block;width:1190px;height:100px;background-image:url("image/tianmao.jpg");float:left;}
+#information .ins .inst1{width:297px;height:100px;background-position:0px 0px;}
+#information .ins .inst2{width:297px;height:100px;background-position:892px 0px;}
+#information .ins .inst3{width:297px;height:100px;background-position:594px 0px;}
+#information .ins .inst4{width:297px;height:100px;background-position:10px 0px;}
+#information .ins .inst5{width:299px;height:100px;background-position:306px 0px;}
+#information .inbs{width:1190px;height:212px;background:#fff;margin:0 auto;clear:both;}
+#information .inbs ul{float:left;}
+#information .inbs ul li a{color:#8B8B8B;}
+#information .inbs ul li a:hover{text-decoration:underline;}
+#information .inbs .u1,.u2,.u3,.u4{padding-left:120px;margin-top:20px;}
+#information .inbs .u1{margin-left:-60px;}
+#information .inbs .phone{width:200px;height:200px;float:right;}
+#information .inbs .phone p{margin-top:20px;font-weight:bold;}
+/*底部*/
+.foot{width:1190px;height:125px;margin:0 auto;}
+.foot .p1{line-height:20px;word-spacing:5px;color:#666;font-size:14px;}
+.foot .p2{color:#666;font-size:14px;}
+.foot span{color:#999;font-size:14px;}
+/*右侧盒子*/
+ #right_box{width:38px;height:615px;background:black;position:fixed;right:0px;top:0px;}
+ #right_box .logo{height:40px;}
+ #right_box .logo .iconfont{display:block;font-size:40px;color:#fff;margin-top:150px;text-align:center;}
+ #right_box .shopCar{height:50px;font-size:14px;color:#fff;text-align:center;}
+ #right_box .shopCar .iconfont{font-size:20px;color:#fff;margin-top:10px;}
+ #right_box .moneny,.love,.colect,.spend,.write,.code{color:#fff;height:50px;text-align:center;line-height:50px;}
+ #right_box .top1{height:30px;text-align:center;line-height:30px;color:#fff;}
+ #right_box .set:hover{background:#C40000;} 
+  </style>
+ </head>
+  <body>
+  <!--右侧栏-->
+   <div id="right_box">
+	 <div class="logo set"><i class="iconfont">&#xf0128;</i></div>
+     <div class="shopCar set"><i class="iconfont">&#x344b;</i><br>购物车</div>
+	 <div class="moneny set"><i class="iconfont">&#xf0191;</i></div>
+	 <div class="love set"><i class="iconfont">&#xf0052;</i></div>
+	 <div class="colect set"><i class="iconfont">&#x3451;</i></div>
+	 <div class="spend set"><i class="iconfont">&#x343b;</i></div>
+	 <div class="write set"><i class="iconfont">&#x346a;</i></div>
+	 <div class="code set"><i class="iconfont">&#xe65f;</i></div>
+	 <div class="top1 set"><i class="iconfont">&#xf02ef;</i></div>
+   </div>
+    <div id="box">
+		<div class="watch"><img src="http://img.alicdn.com/tps/i2/TB1rre8IVXXXXbXXFXXZMDiHXXX-990-100.jpg"></div>
+		<!--导航栏区域-->
+		<div class="slider">
+			<div class="s_l">
+				<ul>
+					<li><a href="#"><i class="iconfont">&#xf00f0;</i>天猫首页</a></li>
+					<li>喵，欢迎来天猫</li>				
+					<li><a href="#">请登录</a></li>
+					<li><a href="#">免费注册</a></li>
+				</ul>
+			</div>
+			<div class="s_r">
+				<ul><!--右端导航-->  
+				    <li><a href="#"><i class="iconfont">&#xf0033;</i>天猫宝</a></li>
+					<li><a href="#">我的淘宝<i class="trangle"></i></a>
+						<div class="list_1">
+							<p><a href="#">已买到的宝贝</a></p>
+							<p><a href="#">已卖出的宝贝</a></p>
+						</div>
+					</li>
+					<li><a href="#"><i class="iconfont">&#xf0052;</i>我关注的品牌</a></li>
+					<li><a href="#"><i class="iconfont">&#x344b;</i>购物车0件</a></li>
+					<li><a href="#"><i class="iconfont">&#xf00af;</i>收藏夹<i class="trangle"></i></a>
+						<div class="list_1">
+							<p><a href="#">收藏的宝贝</a></p>
+							<p><a href="#">收藏的店铺</a></p>
+						</div>	
+					</li>
+					<li><a href="#"><i class="iconfont">&#x3448;</i>手机版</a></li>
+					<li><a href="#">淘宝</a></li>
+					<li><a href="#">商家支持<i class="trangle"></i></a>
+						<div class="list_2">
+							<ul>		
+								<h3 class="h3">商家:<h3>
+								<li><a href="#">商家中心</a></li> 
+								<li><a href="#">商家入驻</a></li> 
+								<li><a href="#">运营服务</a></li> 
+								<li><a href="#">商家品控</a></li> 
+								<li><a href="#">商家工具</a></li> 
+								<li><a href="#">商家规则</a></li> 
+								<li><a href="#">天猫智库</a></li> 
+								<li><a href="#">喵言喵语</a></li>
+								<div class="clearfix"></div>
+								<h3 class="h3">帮助:<h3>
+								<li><a href="#">帮助中心</a></li>
+							</ul>
+						</div>
+					</li>
+					<!--网站导航部分-->
+					<li class="more"><a href="#"><i class="iconfont">&#x343a;</i>网站导航<i class="trangle"></i></a>
+						 <div class="list_3">
+								<ul class="u_1">
+									<h3>热点推荐Hot</h3>
+									<li><a href="#">天猫超市</a></li>
+									<li><a href="#">喵鲜生</a></li>
+									<li><a href="#">科技新品</a></li>
+									<li><a href="#">女装新品</a></li>
+									<li><a href="#">酷玩街</a></li>
+									<li><a href="#">内衣新品</a></li>
+									<li><a href="#">试美妆</a></li>
+									<li><a href="#">运动新品</a></li>
+									<li><a href="#">时尚先生</a></li>
+									<li><a href="#">户外名品</a></li>
+									<li><a href="#">精明妈咪</a></li>
+									<li><a href="#">吃乐会</a></li>
+									<li><a href="#">企业采购</a></li>
+									<li><a href="#">会员积分</a></li>
+									<li><a href="#">天猫国际</a></li>
+								</ul>
+								<ul class="u_2 lf60">
+									<h3>行业市场Market</h3>
+									<li><a href="#">美妆</a></li>
+									<li><a href="#">电器</a></li>
+									<li><a href="#">女装</a></li>
+									<li><a href="#">男装</a></li>
+									<li><a href="#">女鞋</a></li>
+									<li><a href="#">男鞋</a></li>
+									<li><a href="#">内衣</a></li>
+									<li><a href="#">箱包</a></li>
+									<li><a href="#">运动</a></li>
+									<li><a href="#">户外</a></li>
+									<li><a href="#">母婴</a></li>
+									<li><a href="#">家装</a></li>
+									<li><a href="#">医药</a></li>
+									<li><a href="#">食品</a></li>
+									<li><a href="#">配饰</a></li>
+									<li><a href="#">汽车</a></li>
+								</ul>
+								<ul class="u_3 lf60">
+									<h3>品牌风尚Brand</h3>
+									<li><a href="#">大牌街</a></li>
+									<li><a href="#">潮牌街</a></li>
+									<li><a href="#">天猫原创</a></li>
+									<li><a href="#">今日最大牌</a></li>
+									<li><a href="#">一周新发现</a></li>
+									<li><a href="#">全球至尚</a></li>
+								</ul>
+								<ul class="u_4 lf60">
+									<h3>服务指南Help</h3>
+									<li><a href="#">帮助中心</a></li>
+									<li><a href="#">品质保障</a></li>
+									<li><a href="#">特色服务</a></li>
+									<li><a href="#">7天退换货</a></li>
+								</ul>
+						 </div>		
+					</li><!--导航栏结束-->
+				</ul><!--右端导航结束-->
+			</div>
+		</div>
+	</div>
+  <!--头部搜索框区域-->
+   <div id="header">
+     <div class="warp">
+		<div class="warp_l"><img src="https://img.alicdn.com/tps/i3/TB1xsm5IVXXXXbyapXXOl_ZMpXX-320-85.gif"height="84"></div>
+		<div class="warp_r">
+			<div class="c_bx">
+				<div class="search"><input type="text"placeholder="请输入您要搜索的商品"><a href="#">搜索</a></div>
+				<ul>
+					<li><a href="#" class="c1">防晒衣</a></li>
+					<li><a href="#">无人机</a></li>
+					<li><a href="#" class="c1">智能空调</a></li>
+					<li><a href="#">护肤套装</a></li>
+					<li><a href="#">游戏本</a></li>
+					<li><a href="#" class="c1">太阳镜</a></li>
+					<li><a href="#">沙发</a></li>
+					<li><a href="#" class="c1">牛皮席</a></li>
+				</ul>
+			</div>
+			<div class="ad"><img src="http://img.alicdn.com/tps/i1/TB1pPjXIVXXXXcnXVXX01gBIXXX-190-80.jpg"></div>
+		</div>	
+	 </div>
+   </div>
+   
+   <!--商品服务分类标题栏-->
+   <div id="shopTitle">
+     <div class="title">
+		<div class="t_l">商品服装分类</div>
+		<div class="t_r">
+             <ul>
+				<li><a href="#">尚天猫</a></li> 
+				<li><a href="#">喵鲜生</a></li> 
+				<li><a href="#">天猫会员</a></li>
+				<li><a href="#">电器城</a></li>
+				<li><a href="#">天猫超市</a></li>
+				<li><a href="#">医药馆</a></li>
+				<li><a href="#">阿里旅行</a></li>
+				<li><a href="#">天猫国际</a></li> 
+			 </ul>
+		</div>
+    </div>
+   </div>
+   <!--商品区域-->
+   <div id="bigBox">
+	   <div class="main_box">
+		 <div class="m_l">
+			<ul> 
+				 <li><a href="#"><i class="iconfont c2">&#x3477;</i>精选市场</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3459;</i>女装/内衣</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3443;</i>男装/运动户外</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3458;</i>女鞋/男鞋/箱包</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3441;</i>化妆品/个人护理</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#xe6c7;</i>手机/数码/电脑办公</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#xf0050;</i>母婴玩具</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#xf0050;</i>零食/进口食品/茶酒</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x343d;</i>大家电/生活电器</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3460;</i>家具建材</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#xe62c;</i>腕表/珠宝饰品/眼镜</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x344d;</i>汽车/配件/用品</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3451;</i>家纺/布艺/鲜花</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#x3460;</i>医药保健</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#xf00ad;</i>厨具/收纳/宠物</a><i class="icon"></i></li>
+				 <li><a href="#"><i class="iconfont c2">&#xf0037;</i>图书音像</a><i class="icon"></i></li>
+			 </ul>	 
+		 </div>
+		 <style>
+		
+		 </style>
+		
+		 <!--中间区域banner图-->
+		 <div class="m_c">
+		 <ul class="slide">
+			<li><a href="#" alt="#"><img src="https://img.alicdn.com/tps/i1/TB1fMbiIVXXXXcTXXXXgalVIXXX-810-480.jpg"></a></li>
+			<li><a href="#" alt="#"><img src="https://img.alicdn.com/tps/i4/TB1ipSxJXXXXXbHXpXXgalVIXXX-810-480.jpg_q90.jpg"></a></li>
+			<li><a href="#" alt="#"><img src="https://img.alicdn.com/tps/i1/TB14xqiJXXXXXaEXFXXgalVIXXX-810-480.jpg"></a></li>
+			<li><a href="#" alt="#"><img src="https://aecpm.alicdn.com/simba/img/TB1ldSJJXXXXXXiXXXXSutbFXXX.jpg"></a></li>	 
+		 </div>
+		 <div class="m_r"><a href="#" alt="#"><img src="https://img.alicdn.com/tps/i2/TB1NW2fIVXXXXbsXFXXF6kF2pXX-190-480.jpg"></a></div>
+	   </div>
+   </div>
+   <!--热门品牌-->
+   <div id="container">
+		<div class="cnt_h">
+			<div class="hl"><span class="hot1">热门品牌</span><span class="hot2">HOTEBRAND</span></div>
+			<div class="hr">
+				<div class="hr_l">
+					<p><a href="#">国际大牌</a></p>
+					<p><a href="#">时尚潮牌</a></p> 
+					<p><a href="#">国内名牌</a></p>
+					<p class="p1"><a href="#">天猫原创</a></p>
+				</div>
+				<div class="hr_r">
+				     <span><a href="#" target="_blank"><i class="iconfont">&#xf004c;</i>换一批</a></span>
+					 <span><a href="#" target="_blank"><i class="iconfont">&#xf0046;</i>品牌库</a></span> 
+				</div>
+			</div>
+		</div>	
+       <div class="tip_src"><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1vDUuHVXXXXbDXVXXSutbFXXX.jpg"width="192"style="border:none"></a></div>
+	   <div class="tip_c">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1kUbQHpXXXXaCXpXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1dcqhHVXXXXabXpXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1CR.JIpXXXXa5XpXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ayHoHFXXXXaeXpXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1lheIGFXXXXcnXXXXkbrmNFXX_!!0.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/T1gC44Xd8pXXb1upjX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/T1XpquXrthXXXRih2H_!!0.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1lP2_HpXXXXbHXXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1KQYNIXXXXXXiXXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB18T4OIXXXXXbRXVXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1IDRFHpXXXXbnaXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/T1hDRTXndBXXb1upjX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1s3L3HpXXXXamaXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1AcnJHpXXXXciXVXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1bLPgHXXXXXayXVXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/T1XpquXrthXXXRih2H_!!0.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1lP2_HpXXXXbHXXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1KQYNIXXXXXXiXXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB18T4OIXXXXXbRXVXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1KQYNIXXXXXXiXXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB18T4OIXXXXXbRXVXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1IDRFHpXXXXbnaXXXSutbFXXX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/T1hDRTXndBXXb1upjX.jpg_q90.jpg"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1s3L3HpXXXXamaXXXSutbFXXX.jpg_q90.jpg"></a></li>
+			</ul>
+	   </div>
+	   <div class="tip_r"><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1C.TQHpXXXXaiXXXXSutbFXXX.jpg"height="329"style="border:none"></a></div>
+   </div>
+   <!--1楼-->
+   <div class="img_1"><img src="https://aecpm.alicdn.com/simba/img/TB1nokMGVXXXXXmapXXSutbFXXX.jpg"></div>
+   <div class="floor">
+		<div class="fr_l">
+			<span class="icon f1"></span>
+			<div class="fl_banner">
+				<p><a href="#"><img src="https://img.alicdn.com/imgextra/i3/196993935/TB2O2eCdVXXXXXKXXXXXXXXXXXX-196993935.png_q90.jpg"></a></p>
+				<p><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1rMDMHVXXXXaGXFXXSutbFXXX.jpg_q90.jpg"></a></p>
+				<p><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB13KPyHVXXXXXWXVXXSutbFXXX.jpg_q90.jpg"></a></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i2/TB134GYIVXXXXcCXXXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i1/TB1bMWnIVXXXXbIaFXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1zIJ4IFXXXXXeXXXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1jDHQIFXXXXXYXpXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i4/TB1PapMIVXXXXc1XFXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1zpuAIFXXXXX7XXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i1/TB143O.HVXXXXbKXpXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+			
+			</ul>
+		</div>
+   </div>
+    <!--2楼-->
+	<div class="clearfix"></div><!--清除浮动-->
+   <div class="floor">
+		<div class="fr_l">
+			<span class="icon2 f2"></span>
+			<div class="fl_banner">
+				<p><a href="#"><img src="https://img.alicdn.com/imgextra/i4/2424298091/TB2njmncXXXXXaDXXXXXXXXXXXX_!!2424298091.jpg_q90.jpg"></a></p>
+				<p><a href="#"><img src="https://img.alicdn.com/imgextra/i4/2360209412/TB2FbSibFXXXXXrXpXXXXXXXXXX_!!2360209412.jpg_q90.jpg"></a></p>
+				<p><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1aE9pHpXXXXXaXpXXF.MHJpXX-90-45.jpg_q90.jpg"></a></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i2/TB1cQ0QIFXXXXcLXFXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1QxrhIFXXXXcRXXXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1aUGxIFXXXXXuapXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ruZuIFXXXXXVXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1AeCtIFXXXXb9XpXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1jc7GIFXXXXaEXVXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ovMtIFXXXXa9XpXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>	
+			</ul>
+		</div>
+   </div>
+   <div class="clearfix"></div>
+   <!--3楼-->
+   <div class="floor">
+		<div class="fr_l">
+			<span class="icon3 f3"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i2/196993935/TB2FQPFdpXXXXX8XXXXXXXXXXXX-196993935.png_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/imgextra/i3/1983806421/TB2jx1wdpXXXXXXXpXXXXXXXXXX_!!1983806421.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/imgextra/i4/1984359786/TB274qtdpXXXXXZXpXXXXXXXXXX_!!1984359786.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i4/TB1G1lsIFXXXXc2XXXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/imgextra/i1/354823861/TB2oj2TeXXXXXXHXpXXXXXXXXXX_!!354823861.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1c76DIFXXXXXGaXXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1sSc5IpXXXXaRXpXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1PrLNIFXXXXcjaXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1yHufIVXXXXbMaXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB193KXIFXXXXXGapXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>	
+			</ul>
+		</div>
+   </div>  
+   <!--4楼-->
+   <div class="img_1"><img src="https://aecpm.alicdn.com/simba/img/TB1jt22IFXXXXcSXVXXSutbFXXX.jpg"></div>
+   <div class="floor">
+		<div class="fr_l">
+			<span class="icon4 f4"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i1/349169988/TB2Da8HbVXXXXbiXXXXXXXXXXXX_!!349169988.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/imgextra/i2/353042333/TB2BQC.cFXXXXbqXXXXXXXXXXXX_!!353042333.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/imgextra/i1/435878238/TB2V3_TcFXXXXcjXXXXXXXXXXXX_!!435878238.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i1/TB1.yprIVXXXXXAXVXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB16YoxIFXXXXXSXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1tpStIVXXXXahapXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ruZuIFXXXXXVXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i4/TB1fhArFVXXXXXtaXXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1RfOEIVXXXXXFXpXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1V28AHpXXXXbhXFXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+			
+			</ul>
+		</div>
+   </div>
+  <!--5楼--->
+   <div class="floor">
+		<div class="fr_l">
+			<span class="icon5 f5"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/tps/i4/TB1ej5UFFXXXXX0aVXXF.MHJpXX-90-45.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/tps/i1/TB1g0mGFpXXXXbRbVXXamt0.pXX-90-45.jpeg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/tps/i2/TB14kcMFXXXXXc_cpXXF.MHJpXX-90-45.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i3/TB1O_ORIVXXXXXnapXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1RZY1IFXXXXajaXXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i3/TB1GtgZIFXXXXXmXpXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ruZuIFXXXXXVXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/TB19r50IVXXXXajXpXXXXXXXXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i3/TB1sjzgIVXXXXX7XFXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i3/TB1MwLdIVXXXXagXVXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+			</ul>
+		</div>
+   </div>
+   <!--6楼-->
+    <div class="floor">
+		<div class="fr_l">
+			<span class="icon6 f6"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/tps/i4/TB1SGK6IVXXXXaPXXXXF.MHJpXX-90-45.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/imgextra/i2/2228361831/TB2Gp1beXXXXXXpXpXXXXXXXXXX_!!2228361831.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/imgextra/i3/1751848489/TB2uaXQeXXXXXXdXpXXXXXXXXXX_!!1751848489.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/TB1Nz4JIVXXXXb_XXXXXXXXXXXX.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/TB1S0aAIVXXXXaNapXXXXXXXXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB10gFbIFXXXXaNXVXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i4/TB1RsePIVXXXXaYXpXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1ZhxSIVXXXXXbXFXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1ZhxSIVXXXXXbXFXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i4/TB1DgwEIpXXXXckXFXXz87X2XXX-398-332.jpg_q75.jpg" class="img3"></a></li>
+			</ul>
+		</div>
+   </div>
+   <!--7楼-->
+   <div class="img_1"><img src="https://aecpm.alicdn.com/simba/img/TB12rPRIXXXXXXoXXXXSutbFXXX.jpg"></div>
+   <div class="floor">
+		<div class="fr_l">
+			<span class="icon7 f7"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i3/196993935/TB2O2eCdVXXXXXKXXXXXXXXXXXX-196993935.png_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB1rMDMHVXXXXaGXFXXSutbFXXX.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB13KPyHVXXXXXWXVXXSutbFXXX.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i1/TB1rpyiIXXXXXX1XVXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i4/TB1cYEBIpXXXXahaXXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1oeCRIFXXXXaTXpXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB16DUAIFXXXXcYXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1r5pLIFXXXXa9XXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1T7R9IFXXXXa7aXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB13K2pIFXXXXbyXXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>	
+			</ul>
+		</div>
+  </div>
+  <!--8楼-->
+  <div class="floor">
+		<div class="fr_l">
+			<span class="icon8 f8"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i3/196993935/TB2O2eCdVXXXXXKXXXXXXXXXXXX-196993935.png_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB1rMDMHVXXXXaGXFXXSutbFXXX.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB13KPyHVXXXXXWXVXXSutbFXXX.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i3/TB1I71fIFXXXXXtapXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1zoWOIVXXXXXXaXXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1UYAwIFXXXXcLXpXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i1/TB1QtPkIVXXXXcbXFXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1n7DOIFXXXXbbapXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1w8kLIFXXXXbeXXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ta8oIFXXXXXGaXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>	
+			</ul>
+		</div>
+  </div>
+  <!--9楼-->
+  <div class="floor">
+		<div class="fr_l">
+			<span class="icon9 f9"><i class="iconfont ft">&#x3455;</i></span>
+			<div class="flbn9">
+				<ul>
+					<li><a href="#">零食</a></li>
+					<li><a href="#">坚果</a></li>
+					<li><a href="#">进口食品</a></li>
+					<li><a href="#">红酒</a></li>
+					<li><a href="#">白酒</a></li>
+					<li><a href="#">啤酒</a></li>
+					<li><a href="#">花茶</a></li>
+					<li><a href="#">饮料</a></li>
+					<li><a href="#">冲调</a></li>
+					<li><a href="#">牛奶</a></li>
+					<li><a href="#">粮油</a></li>
+					<li><a href="#">生鲜</a></li>				
+				</ul>
+			</div>
+			<div class="flbn_9">
+				<ul>				
+					<li><a href="#">喵鲜生</a></li>
+					<li><a href="#">免费试吃</a></li>
+					<li><a href="#">巧克力</a></li>
+					<li><a href="#">冰淇淋</a></li>
+					<li><a href="#">碧根</a></li>
+					<li><a href="#">果龙虾</a></li>
+					<li><a href="#">大红袍</a></li>
+					<li><a href="#">自助餐</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i3/TB1IuOTIVXXXXXpapXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1RWkNIFXXXXabXFXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i4/TB1pcaVIVXXXXX4XFXX6Cwu2XXX-398-510.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1tXInIFXXXXc1XVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1LJOWIVXXXXcUXVXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB19q8PIFXXXXbnXpXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1nU4VIFXXXXXSXpXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>	
+			</ul>
+		</div>
+  </div>
+  <!--10楼-->
+  <div class="img_1"><img src="https://aecpm.alicdn.com/simba/img/TB1jt22IFXXXXcSXVXXSutbFXXX.jpg"></div>
+  <div class="floor">
+		<div class="fr_l">
+			<span class="icon10 f10"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i3/196993935/TB2O2eCdVXXXXXKXXXXXXXXXXXX-196993935.png_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB1rMDMHVXXXXaGXFXXSutbFXXX.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB13KPyHVXXXXXWXVXXSutbFXXX.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i2/TB1RVcaHpXXXXayXVXXfelZ2VXX-399-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1SCbRIFXXXXbtapXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1v74TIFXXXXXXXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1MgNQIFXXXXakXVXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1bZHJIFXXXXbqXXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB188WUIFXXXXcyXFXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1vE0oIFXXXXb6XVXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+			</ul>
+		</div>
+  </div>
+  <!--11楼-->
+  <div class="floor">
+		<div class="fr_l">
+			<span class="icon11 f11"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i3/196993935/TB2O2eCdVXXXXXKXXXXXXXXXXXX-196993935.png_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB1rMDMHVXXXXaGXFXXSutbFXXX.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB13KPyHVXXXXXWXVXXSutbFXXX.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i2/TB1dTddHpXXXXcraXXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1IOOMIFXXXXbpXpXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1ToerIFXXXXcoaXXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1n.QKIpXXXXbKXXXXSutbFXXX.jpg_q75.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1r2lZIFXXXXaFXFXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1YhxzIFXXXXXxXXXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/bao/uploaded/TB1iIK5IFXXXXX4XpXXSutbFXXX.jpg_q75.jpg" class="img3"></a></li>	
+			</ul>
+		</div>
+  </div>
+  <!--12楼-->
+  <div class="floor">
+		<div class="fr_l">
+			<span class="icon12 f12"></span>
+			<div class="fl_banner">
+				<p><img src="https://img.alicdn.com/imgextra/i3/196993935/TB2O2eCdVXXXXXKXXXXXXXXXXXX-196993935.png_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB1rMDMHVXXXXaGXFXXSutbFXXX.jpg_q90.jpg"></p>
+				<p><img src="https://img.alicdn.com/bao/uploaded/TB13KPyHVXXXXXWXVXXSutbFXXX.jpg_q90.jpg"></p>
+			</div>
+			<div class="flb">
+				<ul>
+					<li><a href="#">潮流女装</a></li>
+					<li><a href="#">秋季新品</a></li>
+					<li><a href="#">品牌特卖</a></li>
+					<li><a href="#">连衣裙</a></li>
+					<li><a href="#">商场同款</a></li>
+					<li><a href="#">国际大牌</a></li>
+					<li><a href="#">品质内衣</a></li>
+					<li><a href="#">bra吊带</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="fr_c"><img src="https://img.alicdn.com/tps/i2/TB1HlG3IVXXXXbxXFXXSYoGNVXX-400-422.jpg"></div>
+		<div class="fr_r">
+			<ul>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i3/TB10cjrIVXXXXXGXpXXOa9O7VXX-199-255.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1gKMtIpXXXXXoXVXXOa9O7VXX-199-255.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i2/TB1QrXdIVXXXXXXXVXXOa9O7VXX-199-255.jpg" class="img2"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/imgextra/i1/52660971/TB2IW2FeXXXXXbRXpXXXXXXXXXX_!!52660971.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i3/TB1EflCIFXXXXc_XpXX5ySD7VXX-199-166.jpg" class="img3"></a></li>
+				<li><a href="#"><img src="https://img.alicdn.com/tps/i3/TB1evpyIVXXXXaaXpXX5ySD7VXX-199-166.jpg" class="img3"></a></li>
+			
+			</ul>
+		</div>
+  </div>
+ <div class="img_1"><img src="https://aecpm.alicdn.com/simba/img/TB1mkC8IVXXXXa2apXXSutbFXXX.jpg"></div>
+ <!--底部-->
+ <div id="information">
+	<div class="ins">
+		<a href="#"><span class="icon inst1"></span><a>
+		<a href="#"><span class="icon inst2"></span><a>
+		<a href="#"><span class="icon inst3"></span><a>
+		<a href="#"><span class="icon inst5"></span><a>
+      <div class="inbs">
+	    <ul class="u1">
+			<h3>购物指南</h3>
+			<li><a href="#">免费注册</a></li>
+			<li><a href="#">开通支付宝</a></li>
+			<li><a href="#">支付宝充值</a></li>
+		</ul>
+         <ul class="u2">
+			<h3>天猫保障</h3>
+			<li><a href="#">发票保障</a></li>
+			<li><a href="#">售后规则</a></li>
+			<li><a href="#">缺货赔付</a></li>
+         </ul>
+		 <ul class="u3">
+			<h3>支付方式</h3>
+			<li><a href="#">支付宝快捷支付</a></li>
+			<li><a href="#">支付宝余额付款</a></li>
+			<li><a href="#">支付宝钱包付款</a></li>
+			<li><a href="#">货到付款</a></li>
+			<li><a href="#">新人支付</a></li>
+		</ul>
+		 <ul class="u4">
+			<h3>商家服务</h3>
+			<li><a href="#">商家入驻</a></li>
+			<li><a href="#">商家中心</a></li>
+			<li><a href="#">天猫智库</a></li>
+			<li><a href="#">天猫规则</a></li>
+			<li><a href="#">物流服务</a></li>
+			<li><a href="#">喵言喵语</a></li>
+			<li><a href="#">运营服</a></li>
+		</ul>
+		<div class="phone"><p>手机天猫</p><img src="http://img.alicdn.com/tps/i1/TB14VZKHXXXXXcAXXXX64VRZFXX-105-105.png" alt="手机天猫"></div>
+	  </div>
+   </div>
+   <!--底部-->
+   <div class="foot">
+		<p class="p1"> 关于天猫 帮助中心 开放平台 诚聘英才 联系我们 网站合作 法律声明 廉正举报 规则意见征集</p>
+		<p class="p1"> 阿里巴巴集团| 淘宝网 | 天猫 | 聚划算 | 全球速卖通 | 阿里巴巴国际交易市场| 1688 | 阿里妈妈 | 阿里旅行·去啊 | 阿里云计算 | YunOS | 阿里通信 | 万网 | 高德 | 优视 | 友盟 | 酷盘 | 虾米 | 天天动听 | 来往 | 钉钉 | 11 Main | 支付宝</p>  
+		<span>增值电信业务经营许可证：浙B2-20110446</span>
+		<span>网络文化经营许可证：浙网文[2015]0295-065号互联网医疗保健信息服务审核同意书 浙卫网审【2014】6号</span>
+		<span>互联网药品信息服务资质证书编号：浙-（经营性）-2012-0005</span>
+		<p class="p2">© 2003-2015 TMALL.COM 版权所有</p>
+   </div>
+</div>
+ <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		 <script type="text/javascript">
+			$(function(){
+				function autoPlay(){
+					$(".slide").append($(".slide li:first"));
+					$(".slide").css("left","-810px");
+				};
+				autoPlay();
+				setInterval(autoPlay,1000);
+			})
+		 </script>
+ </body>
+</html>
+

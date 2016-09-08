@@ -1,0 +1,182 @@
+/*
+   @：author:王震川 
+   @:decoration:主页的css样式
+ * 
+ * */
+
+@charset "utf-8";
+
+/*公共样式开始*/
+
+body {
+	font: 14px/1.5 \5b8b\4f53, Microsoft YaHei;
+	color: #666;
+	font-family: Microsoft YaHei;
+	font-family: "微软雅黑";
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+address,
+cite,
+code,
+em,
+th {
+	font-weight: normal;
+	font-style: normal;
+}
+
+input,
+select,
+textarea {
+	outline: 0;
+	vertical-align: middle;
+}
+
+/*公共样式结束*/
+html,body,div.wrap{ height:100%;position:relative;}
+body{overflow:hidden;}
+body{overflow:hidden;/*溢出部分隐藏，当鼠标滚动时浏览器会有一个默认的事件，会与我们滚动的发生冲突，注意别加错了的，是给body，而不是html,也不是wrap，消除抖动*/}
+/*登陆注册开始*/
+.loginRegister{position:fixed;right:80px;top:25px;z-index:999;color:#666;}
+.loginRegister a{text-decoration:none;color:#fff;font-size:25px;margin:0px 10px;transition:all 0.5s ease;}
+.loginRegister a:hover{color:#FF3366;transition:all 0.5s ease;}
+/*登陆注册结束*/
+/*第一部分part1开始*/
+.wrap .part{position:relative;}
+.wrap .logoCon a.title-logo{width:200px;height:46px;display:block;background:url(../images/title-Logo.png) no-repeat center center;background-size:cover;position:absolute;left:0%;top:0px;opacity:0;transition:0.5s ease;}
+.wrap .part1{width:100%;height:100%;background:url(../images/friends.jpg) no-repeat center;background-size:cover;background-attachment:fixed;}
+.wrap .part1 .part1-CenterWord{width:630px;height:230px;background:url(../images/weclomeMyWord.png) no-repeat center center;position:absolute;left:50%;top:0%;opacity:0;transition:all 2s ease;;margin-left:-315px;background-size:cover;}
+.wrap .part1 .part1-boottom{ width:100%; height:35px; line-height:35px; color:#fff; font-size:18px; font-weight:bold;
+	background:#D97F5C; position:absolute; bottom:0; text-align:center;}
+.wrap .part1.first .part1-CenterWord{opacity:1;/*透明度为1*/transition:all 2s ease;top:35%}
+.wrap .part1.first a.title-logo{opacity:1;/*transition:0.5s ease;*/left:5%;top:25px;transition:0.5s ease;}
+/*第一部分part1结束*/
+/*第二部分part2开始*/
+.wrap .part2{width:100%;height:100%;background:#D97F5C;}
+.wrap .part2-CenterWord{ width:738px; height:530px; background:url(../images/whatisjuLe.png) no-repeat;background-size:cover;
+	position:absolute; top:40%; left:50%; margin-left:-310px;opacity:0;transition:all 1s ease;}
+.wrap .part2.on .part2-CenterWord{opacity:1;transition:all 1s ease;;top:3%;}
+.wrap .part2.on a.title-logo{opacity:1;/*;transition:all 0.5s ease;不需要要加*/top:25px;left:5%;}
+/*第二部分part2结束*/
+/*第三部分part3开始*/
+.wrap .part3{width:100%;height:100%;background:url(../images/loveBg.jpg) no-repeat center center;background-size:cover;}
+.wrap .part3 .part3-Left{width:580px; height:240px; background-image:url(../images/julewuchubuzai.png); position:absolute; 
+	top:34%;left:0%;background-size:cover;opacity:0;transition:all 0.8s ease;}
+.wrap .part3.on  .part3-Left{opacity:1;left:6%;}
+.wrap .part3.on a.title-logo{opacity:1;top:25px;left:5%;}
+/*新增拖拽相册开始*/
+#wrap-con{width:180px;height:200px;border:1px solid #000;margin:0px auto;position:relative;top:110px;background-size:100%;transform-style:preserve-3d;/*搭建3d场景*//*井深放到变形里面*/transform:perspective(800px) rotateX(-10deg) rotateY(0deg)}
+#wrap-con ul li{width:133px;height:200px;list-style:none;position:absolute;top:0px;left:0px;border-radius:3px;box-shadow:0 0 10px #fff;-webkit-box-reflect:below 15px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);-moz-box-reflect:below 15px -moz-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);-ms-box-reflect:below 15px -ms-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%)/*倒影 15代表的与倒影的距离*//*从顶部完全透明的，到完全不透明的*/transform:rotateY(0deg) translateZ(0px);}
+#wrap-con p{width:700px;height:700px;border-radius:350px;background:-webkit-radial-gradient(center,rgba(50,50,50,1),rgba(0,0,0,0));/*从中心向四周扩散开来的*/ position:absolute;top:100%;left:50%;margin-top:-350px;margin-left:-350px;transform:rotateX(90deg)}
+/*新增拖拽相册结束*/
+/*第三部分part3结束*/
+/*第四部分part4开始*/
+.wrap .part4{width:100%;height:100%;background:url(../images/zhiganPhoto.jpg) no-repeat;background-size:cover;;}
+.wrap .part4 .part4-Left{width:280px; height:250px; background:url(../images/PersonIntro.png) no-repeat; position:absolute; top:40%; left:0%;transition:all 1s ease;opacity:0;}
+.wrap .part4 .part4-SelfIntrduction{width:50%; line-height:30px; letter-spacing:1px; padding:40px 20px; 
+	background:rgba(0,0,0,.3); bottom:-20%; right:40px; font-size:18px; 
+	position:absolute;color:#fff;transition:all 1.5s ease;opacity:0;}
+.wrap .part4.on .part4-Left{opacity:1;left:6%;}
+.wrap .part4.on .part4-SelfIntrduction{opacity:1;bottom:20%;}
+.wrap .part4.on a.title-logo{opacity:1;top:25px;left:5%;}
+/*第四部分part4结束*/
+/*第五部分part5开始*/
+.wrap .part5{width:100%;height:100%;background:url(../images/jiheLiTi.jpg) no-repeat center;background-size:cover;}
+.wrap .part5 .part5-bottom{width:100%; height:200px; background:rgba(0,0,0,.3);position:absolute;bottom:-4%;transition:all 1.9s ease;opacity:0;}
+.wrap .part5 .part5-bottom .part5-bootomL{ width:455px; height:200px;margin-left:50px; background-size:450px;float:left; background-image:url(../girl.png) no-repeat;background-size:cover;}
+.wrap .part5 .part5-bottom .part5-bootomR{ width:40%;float:right; line-height:30px; letter-spacing:1px; padding:40px 20px; font-size:18px; color:#fff;}
+.wrap .part5.on .part5-bottom{opacity:1;bottom:4%;}
+.wrap .part5.on a.title-logo{opacity:1;top:25px;left:5%;}
+/*第五部分part5结束*/
+/*第六部分part6开始*/
+.wrap .part6{width:100%;height:100%;background:url(../images/city.jpg);background-size:cover;}
+.wrap .part6 .part6-left{width:590px; height:250px; position:absolute; top:45%; left:0%; 
+	background-image:url(../images/chongwu.png);opacity:0;transition:all 0.5s ease;}
+.wrap .part6.on  .part6-left{opacity:1;left:6%;}
+.wrap .part6.on a.title-logo{opacity:1;top:25px;left:5%;}
+/*第六部分part6结束*/
+/*第七部分part7开始*/
+.wrap .part7{width:100%;height:100%;background:url(../images/book.jpg) no-repeat center;background-size:cover;}
+.wrap .part7 .part7-leftWord{width:534px; height:200px; position:absolute; top:35%; left:0%;opacity:0;transition:all 1s ease;background-image:url(../images/if.png); background-size:100%;}
+.wrap .part7 .part7-RightCon{width:400px; height:516px; position:absolute; bottom:-100px;opacity:0;transition:all 1.5s ease;right:2%; background-image:url(../images/phone.png); background-size:100%;border-radius:15px;}
+.wrap .part7.on .part7-leftWord{opacity:1;left:10%;}
+.wrap .part7.on .part7-RightCon{opacity:1;bottom:100px;}
+.wrap .part7.on a.title-logo{opacity:1;top:25px;left:5%;}
+/*第七部分part7结束*/
+/*按钮的开始*/
+.nav{ width:17px;position:fixed; top:50%; margin-top:-77px; left:30px;}
+.nav ul li{list-style:none; width:18px; height:18px; border:2px solid #fff; border-radius:100%;
+	margin:12px 0; cursor:pointer;transiton:all 0.8s ease;}
+@keyframes rotaing{
+	from{
+		-webkit-transform:rotate(0deg);
+		-ms-transform:rotate(0deg);
+		-o-transform:rotate(0deg);
+		-moz-transform:rotate(0deg);
+	    transform:rotate(0deg);	
+	}to{
+		-webkit-transform:rotate(360deg);
+		-o-transform:rotate(360deg);
+		-ms-transform:rotate(360deg);
+		-moz-transform:rotate(360deg);
+        transform:rotate(360deg);   		
+	}
+	
+}
+.nav ul li.hover{background:#fff;background:url(../images/btnRotate.png) no-repeat center;-webkit-animation:rotaing 1.2s linear infinite;-moz-animation:rotaing 1.2s linear infinite;-ms-animation:rotaing 1.2s linear infinite;-o-animation:rotaing 1.2s linear infinite;animation:rotaing 1.2s linear infinite;}
+.nav ul li:hover{animation-play-state: paused;transform:scale(1.2);transiton:all 0.8s ease;background:url(../images/btnRotate.png) no-repeat center;}
+/*按钮的结束*/

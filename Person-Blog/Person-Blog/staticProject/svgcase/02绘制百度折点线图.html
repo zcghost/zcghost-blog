@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Generator" content="EditPlus®">
+<meta name="Author" content="王震川">
+<meta name="Keywords" content="绘制百度折点线图">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>绘制百度折点线图</title>
+<style type="text/css">
+        /**
+		    author:zhenchuan.wang
+			descoration:绘制百度折点线图
+			time:2016-9-2日
+		**/
+		#wrap{ 
+			width:500px; 
+			height:500px; 
+			background:white;
+			margin:0 auto;
+		}
+body{ background:black;}
+</style>
+<script>
+
+window.onload = function(){
+	
+	var svgNS = 'http://www.w3.org/2000/svg';  // 创建命名空间
+	var oParent = document.getElementById('wrap');  // 找到父元素
+	var oSvg = document.getElementById('svg1');     // 找到svg1
+	
+	var oPolyLine = null;                           // 折线为空
+	var pointsNum = '';
+	// 创建标签
+	function createTag(tag,objAttr){	
+		var oTag = document.createElementNS(svgNS , tag);	
+		for(var attr in objAttr){
+			oTag.setAttribute(attr , objAttr[attr]);
+		}	
+		return oTag;	
+	}
+	// 鼠标点下去时
+	oSvg.onmousedown = function(ev){
+		var ev = ev || window.event;  // 兼容ie
+		// 判断有没有线时，有没有画时
+		if(!oPolyLine){
+			oPolyLine = createTag('polyline',{'fill':'none','stroke':'red','stroke-width':'2'});
+			oSvg.appendChild( oPolyLine );
+		}
+		var x = ev.clientX - oParent.offsetLeft;  // 获取鼠标点的位置x轴的位置
+		var y = ev.clientY - oParent.offsetTop;   // 获取鼠标点的位置y轴的位置
+		
+		if(pointsNum == ''){
+			pointsNum = x + ',' + y;              //更改鼠标点的横纵坐标位置
+		}
+		else{
+			pointsNum += ',' + x + ',' + y;      // 累加
+		}
+		
+		oPolyLine.setAttribute('points',pointsNum); 
+		
+		// 圆心点
+		var oCircle = createTag('circle',{'cx':x,'cy':y,'r':'5','fill':'white','stroke':'red','stroke-width':3});
+		oSvg.appendChild( oCircle );
+		
+	};
+	// 鼠标移开时
+	oSvg.onmousemove = function(ev){
+		var ev = ev || window.event;
+		
+		if( oPolyLine ){
+			
+			var x = ev.clientX - oParent.offsetLeft;
+			var y = ev.clientY - oParent.offsetTop;
+			
+			oPolyLine.setAttribute('points',pointsNum + ',' + x + ',' + y);
+			
+		}
+		
+	};
+	// 鼠标右键，取消，功能菜单
+	oSvg.oncontextmenu = function(){
+		oSvg.onmousemove = null;
+		return false;  // 禁止默认的操作
+	};
+	
+};
+
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<svg id="svg1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      
+    </svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style>
+      *{padding:0px;margin:0px;}
+	  #container{width:1000px;margin:50px;position:relative;/*是一个定位布局，相对定位*/}
+	  #container img{position:absolute;/*图片进行绝对定位*/}
+	  #loader{width:100%;height:60px;background:url("images/loader.gif") no-repeat center #FFF;position:fixed;bottom:0;left:0px;}
+  </style>
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript">
+            // 当页面加载完后，开始执行js代码
+            window.onload = function(){
+				    var oContainer = $('#container');   // 获取容器的Id
+
+				    // 可视图片的宽度除以图片所占的宽度，那么图片的宽度是怎么算出来的呢？
+				    // 计算列数
+					 var iWidth = 200;   // 计算每列所占用的宽度，列宽
+					 var iSpace = 10;    // 定义一个，每列之间的间隔，间隔宽
+					 var iOuterWidth = iWidth+iSpace; // 图片每一列占用的宽度是多少的呢？这就是它实际占用的位的宽度，列的实际宽度
+					 var oLoader = $('#loader');  // 加载的图片
+					 //var iCells = $(window).innerWidth();  // 定义一个变量,存储可视内容的宽度
+					 var sUrl = 'http://www.wookmark.com/api/json/popular?callback=?';   // 把这个地止给存储起来
+					 var iCells = 0;  // 计算总列数，列数会随着可视区的变化而变化
+					 var iPage = 0;   // 定义的初始列数为0，第一页的
+					 var arrT = []; // 存放的图片的初始值为0
+					 var arrL = [] // 存放的就是每个left的值
+					 var iBtn = true;  // 定义一个开关，初始化变量,控制滚轮的滚动，滚动的距离
+
+
+				 // 当屏幕的尺寸发生改变之后，必须要从新的计算列数,定义一个方法，供调用
+				 function setCells(){
+				     iCells = Math.floor($(window).innerWidth()/iOuterWidth);  // 存储的可视内容的宽度除以列,计算初始化的列数，的实际宽度，就等于列数
+					 // 当图片一多时，就会很卡，所以要限制图片一次性加载的数量
+					 if(iCells<3){ // 如果发现列数小于3
+					    iCells = 3;  // 那么让列数等于3
+					 }
+					 if(iCells>6){   // 如果让列数大于6的话
+                        iCells = 6;  // 那么让他最大的列数等于6，这样的话，它的列数就会固定在3到6之间
+					 }
+					 document.title = iCells;
+                     // 设置它的宽度
+					 oContainer.css('width',iOuterWidth*iCells-iSpace); //列的实际宽度等于列的实际宽度*列数,减去最后一个间隔宽度
+				 }
+				 setCells();   // 调用方法
+				 // 循环一下
+				 for(var i = 0;i<iCells;i++){ // 有多少列，就循环多少次
+					 arrT.push(0);
+				     arrL.push(i*iOuterWidth);   // 当前宽度的计算值，个数乘以列的实际宽度
+
+				 }
+				 console.log(arrL);
+				 console.log(arrT);
+				 // 封装一个方法
+				 function getData(){  // 每次加载数据完之前，进行一个判断
+					 if(iBtn){
+					 iBtn = false;    // iBtn为一个false
+				     oLoader.show();        // 每次在这之前,oLoader进行显示
+                     $.getJSON(sUrl,'page='+iPage,function(data){  // 回调函数
+				     //console.log(data);数据获取之后，怎么向页面中添加呢？,设置图片在哪个位置
+					 $.each(data,function(index,obj){
+					 var oImg = $('<img />');
+				     oImg.attr('src',obj.preview);
+					 oContainer.append(oImg);     // 把内容图片添加到
+					  // 缩放的比例高度
+					 var iHeight = iWidth /obj.width*obj.height; // 每列所用的宽度除以
+					 oImg.css({
+						  width:iWidth,
+						  height:iHeight
+					  });
+					  // 获取arrT最小值所在的位置
+					  var iMinIndex = getMin();
+					  //哪个数据列最短
+					  // 设置定位
+					  oImg.css({
+						    left:arrL[iMinIndex],
+						    top: arrT[iMinIndex]
+					   });
+					  //arrT[iMinIndex]+=oImg.height();
+					   arrT[iMinIndex]+=iHeight+10; // 图片有间距
+					   oLoader.hide();     // 加载图片隐藏
+					   iBtn = true;        // 当加载完成之后，设置为true
+					  });
+
+				    });
+				   }
+				 }
+                 getData();  // 调用方法
+				 // 加一个滚动条的滚动事件
+				 $(window).on('scroll',function(){
+				     var iH = $(window).scrollTop()+$(window).innerHeight();  // 滚动条的高度+可视宽度的高度
+				     var iMinIndex = getMin(); // 定义一个iMinIndex,把最小的值赋值给它
+					 //document.title = arr[iMinIndex]+oContainer.offset().top+":"+iH;
+					 if(arrT[iMinIndex]+oContainer.offset().top<iH){  // 当       arrT[iMinIndex]+oContainer.offset().top小于高度
+					      //alert(1);达到那种高度
+						  iPage++; // 自增
+						  // 加完之后，重新的调用函数
+						  getData();
+					 }
+
+				 });
+				 // 当窗口页面发生变化时，它的一个变化
+				 $(window).on('resize',function(){
+				      var iOldCells = iCells;   // 记录一下原来的列数
+					  // 算出当期的列以后
+					  setCells();
+					  // 每次缩小窗口时，动态的改变列数
+					 var iH = $(window).scrollTop()+$(window).innerHeight();  // 滚动条的高度+可视宽度的高度
+				     var iMinIndex = getMin(); // 定义一个iMinIndex,把最小的值赋值给它
+					 //document.title = arr[iMinIndex]+oContainer.offset().top+":"+iH;
+					 if(arrT[iMinIndex]+oContainer.offset().top<iH){  // 当       arrT[iMinIndex]+oContainer.offset().top小于高度
+					      //alert(1);达到那种高度
+						  iPage++; // 自增
+						  // 加完之后，重新的调用函数
+						  getData();
+					 }
+
+					  if (iOldCells == iCells)
+					  {
+						  return;
+					  }
+					  arrT = [];   // 清空top值
+					  arrL = [];   // 清空left值
+					  for(var i = 0;i<iCells;i++){
+					      arrT.push(0);
+						  arr.push(i*iOuterWidth);
+					  }
+					  var aImgs = oContainer.find("img");
+					  aImg.each(function(){
+					       var iMinIndex = getMin();  // 每次循环中获取最小的值
+						   /*
+						   $(this).css({
+						        left:arrL[iMinIndex],
+								top: arrT[iMinIndex]
+						   });*/
+						   // 类似于百度动画的一个值
+						   $(this).animate({
+						      left: arrL[iMinIndex],
+							  top:  arrT[iMinIndex]
+						   });
+						   arrT[iMinIndex]+=$(this).height()+10;
+					  });
+				 });
+				 //设定一个函数,最小高度
+				 function getMin(){
+					 var v = arrT[0];
+					 var _index = 0;
+					 for(var i =1;i<arrT.length;i++){
+						 if(arrT[i]<v){
+						     v = arrT[i];
+							 _index = i;
+						 }
+					 }
+					 return _index;
+				 } 
+			}
+  </script>
+ </head>
+ <body>
+         <!--图片的存放，专门用来展示图片，一个容器开始-->
+		 <div id="container"></div>
+		 <!--图片的存放，专门用来展示图片，一个容器结束-->
+		 <!--数据加载时，一个loader图片开始-->
+		 <div id="loader"></div>
+		 <!--数据加载时，一个loader图片结束-->
+ </body>
+</html>
+<!--
+    1:像百度图片这种，列数是不固定的
+    通过定位布局模式的瀑布流效果，无需跳转实现批量数据的展示，同时列表数量会根据浏览器宽度动态发生改变，里面的图片数据也会根据列数的不同动态调整显示位置
+-->

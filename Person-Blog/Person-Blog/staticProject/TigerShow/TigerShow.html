@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link rel="stylesheet" href="css/font/iconfont.css"type="text/css">
+  <title>虎秀网</title>
+  <!--
+	project:虎嗅网
+  -->
+  <style>
+    *{padding:0px;margin:0px;}
+a{text-decoration:none;}
+ul,li{list-style:none;}
+body{background:#F0F0F0;}
+body img{border:none;}
+/*顶部*/
+#top{height:28px;background:#2E3138;}
+#top .nav_top{height:28px;width:1000px;margin:0 auto;}
+#top .nav_top .regist{height:28px;width:150px;float:right;text-align:center;line-height:28px;}
+#top .nav_top .regist a{display:inline-block;color:#fff;font-size:14px;font-family:"微软雅黑";text-align:center;margin-left:5px;}
+#top .nav_top .regist .actile{background:#015BB0;height:28px;width:60px;}
+/*导航栏区域*/
+#nav_band{height:77px;border-bottom:1px solid #ccc;}
+#nav_band .navbox{height:77px;width:1000px;margin:0 auto;background:#fff;}
+#nav_band .navbox a img{border:none;float:left;}
+#nav_band .navbox .nav_left{width:837px;height:77px;float:left;}
+#nav_band .navbox .nav_left .nav_list{width:396px;height:77px;float:left;margin-left:147px;}
+#nav_band .navbox .nav_left .nav_list li{float:left;height:77px;width:78px;line-height:77px;text-align:center;border-right:1px solid #ccc;position:relative;}
+#nav_band .navbox .nav_left .nav_list li .iconfont{position:absolute;top:0px;left:58px;}
+#nav_band .navbox .nav_left .nav_list li:first-child{border-left:1px solid #ccc;}
+#nav_band .navbox .nav_left .nav_list li:hover{background:#2E3138;color:#fff;}
+#nav_band .navbox .nav_left .nav_list li:hover .list1{color:#fff;border-top:2px solid #019FE9}
+#nav_band .navbox .nav_left .nav_list li .list1{display:inline-block;color:#999;height:77px;width:78px;font-weight:bold;}
+#nav_band .navbox .nav_left .nav_list .s1 .list2{width:160px;height:162px;position:absolute;top:77px;left:-1px;background:#2E3138;border-radius:5px;display:none;}
+#nav_band .navbox .nav_left .nav_list .s1:hover .list2{display:block;}
+#nav_band .navbox .nav_left .nav_list .s1 .list2 p{line-height:20px;padding:6px;text-indent:0.6em;}
+#nav_band .navbox .nav_left .nav_list .s1 .list2 .news{font-size:14px;text-align:left;border-radius:5px;}
+#nav_band .navbox .nav_left .nav_list .s1 .list2 .news a{display:inline-block;font-size:14px;color:#888;font-style:normal;}
+#nav_band .navbox .nav_left .nav_list .s1 .list2 .news:hover{background:#23252A;}
+#nav_band .navbox .nav_left .nav_list .s1 .list2 .news:hover a{color:#fff;}
+#nav_band .navbox .nav_left .nav_list .s2 .list3{height:70px;width:158px;position:absolute;background:#2E3138;top:77px;left:0px;line-height:20px;line-height:30px;display:none;}
+#nav_band .navbox .nav_left .nav_list .s2 .list3 a{color:#888;display:inline-block;height:34px;width:158px;font-size:14px;}
+#nav_band .navbox .nav_left .nav_list .s2 .list3 a:hover{background:#23252A;color:#fff;}
+#nav_band .navbox .nav_left .nav_list .s2:hover .list3{display:block;}
+#nav_band .navbox .nav_left .nav_list .s2 .list3 .cnt{position:absolute;width:158px;height:210px;background:#2E3138;top:0px;left:158px;display:none;}
+#nav_band .navbox .nav_left .nav_list .s2 .list3 .cnt a:hover{background:#23252A;}
+#nav_band .navbox .nav_left .nav_list .s2 .list3 .act:hover .cnt{display:block;}
+/*右端导航*/
+#nav_band .navbox .nav_right{width:293px;height:77px;float:left;border-right:1px solid #ccc;position:relative;}
+#nav_band .navbox .nav_right .search{width:267px;height:36px;border:1px solid #ccc;border-radius:5px;margin:20px 12px;}
+#nav_band .navbox .nav_right input{width:267px;height:36px;border:none;border-radius:5px;outline:none;text-indent:0.3em;font-size:14px;font-family:"微软雅黑";color:#e5e5e5;}
+#nav_band .navbox .nav_right .bns{position:absolute;top:30px;left:254px;}
+#nav_band .navbox .nav_right .bns .iconfont{font-size:20px;font-weight:bold;}
+#cnt{width:1000px;height:5283px;background:#fff;margin:10px auto;}
+/*左边内容区域*/
+#cnt .cnt_left{width:690px;height:570px;border:1px solid #999;float:left;}
+#cnt .cnt_left .title{margin-left:20px;}
+#cnt .cnt_left h1 a{font-size:20px;color:#111;}
+#cnt .cnt_left h1 a:hover{color:#528DCA;}
+#cnt .cnt_left .title p{font-size:14px;}
+#cnt .cnt_left img{max-width:100%;margin-top:10px;}
+#cnt .cnt_left .author{padding:10px;float:left;}
+#cnt .cnt_left .author a{color:#999;font-size:12px;}
+#cnt .cnt_left .author .s1:hover{font-weight:bold;color:#055DB1;}
+#cnt .cnt_left .ims{float:right;padding:10px}
+#cnt .cnt_left .icon{width:400px;height:400px;display:inline-block;background-image:url("image/icon2.png");}
+#cnt .cnt_left .share{width:20px;height:20px;background-position:-91px -10px;}
+#cnt .cnt_left .trangle{width:20px;height:20px;background-position:-10px -10px;}
+#cnt .cnt_left .cmt{width:20px;height:20px;background-position:-203px -51px;}
+/*左侧内容区域*/
+#cnt .cnt_left .cnt_box{width:690px;margin-top:60px;}
+#cnt .cnt_left .cnt_box li{width:648px;height:182px;border-bottom:1.6px dashed #ccc;margin:0px 21px;position:relative;}
+#cnt .cnt_left .cnt_box li:last-child{border:none;}
+#cnt .cnt_left .cnt_box li .list1{height:159px;width:600px;margin:10px auto;}
+#cnt .cnt_left .cnt_box li .list1 .inform{margin-top:13px;line-height:24px;font-size:14px;text-indent:1em;}
+#cnt .cnt_left .cnt_box li .list1 .inform a{font-weight:bold;color:#111;}
+#cnt .cnt_left .cnt_box li .list1 .inform a:hover{color:#428BCA;}
+#cnt .cnt_left .cnt_box li img{float:left;margin-top:3px;}
+#cnt .cnt_left .cnt_box .hot{display:inline-block;position:absolute;width:38px;height:18px;top:3px;left:-14px;background:#F85050;text-align:center;line-height:20px;}
+#cnt .cnt_left .cnt_box .hots{display:inline-block;position:absolute;top:21px;left:-14px;border-top:7px solid #F85050;border-right:7px solid #F85050;border-bottom:7px solid transparent;border-left:7px solid transparent;}
+#cnt .cnt_left .cnt_box .particular{width:648px;height:85px;border-bottom:1.6px dashed #ccc;margin:0 auto;position:relative;}
+#cnt .cnt_left .cnt_box .particular .hot1{display:inline-block;position:absolute;width:66px;height:22px;top:-1px;left:-21px;background:#F85050;text-align:center;line-height:20px;}
+#cnt .cnt_left .cnt_box .particular .hots1{display:inline-block;position:absolute;top:21px;left:-21px;border-top:12px solid #F85050;border-right:12px solid #F85050;border-bottom:12px solid transparent;border-left:12px solid transparent;}
+/*内容底部信息*/
+#cnt .cnt_left .view{height:84px;width:683px;border:1px solid #ccc;}
+#cnt .cnt_left .view p{float:left;height:84px;width:169px;margin-left:1px;border-right:1px solid #ccc;}
+#cnt .cnt_left .view p:hover{background:#F0F0F0;}
+#cnt .cnt_left .view p a{font-weight:bold;color:#111;}
+#cnt .cnt_left .view .v1{line-height:29px;text-indent:3em;}
+#cnt .cnt_left .view p:nth-child(1){margin-left:0px;}
+#cnt .cnt_left .view p:nth-child(3){margin-right:0px;}
+#cnt .cnt_left .view p:last-child{margin-left:1px;}
+/*右端顶部*/
+#cnt .cnt_right{width:280px;height:2151px;border:1px solid #ccc;float:right;overflow:hidden;}
+#cnt .cnt_right .top_box{height:80px;width:100%;}
+#cnt .cnt_right .top_box ul li{width:69px;height:39px;float:left;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+#cnt .cnt_right .top_box ul .color1:hover{background:#65C92C;}
+#cnt .cnt_right .top_box ul .color2:hover{background:#ED4848;}
+#cnt .cnt_right .top_box ul .color3:hover{background:#686868;}
+#cnt .cnt_right .top_box ul .color4:hover{background:#93C200;}
+#cnt .cnt_right .top_box ul .color5:hover{background:#3E5B99;}
+#cnt .cnt_right .top_box ul .color6:hover{background:#F7B10B;}
+#cnt .cnt_right .top_box ul .color7:hover{background:#349FE6;}
+#cnt .cnt_right .top_box ul .color8:hover{background:#F67B23;}
+#cnt .cnt_right .top_box ul li .icon{display:inline-block;height:400px;width:400px;background-image:url("image/icon2.png");}
+#cnt .cnt_right .top_box ul li .weixin{width:47px;height:40px;background-position:-307px 0px;}
+#cnt .cnt_right .top_box ul li .weibo{width:57px;height:40px;background-position:-111px 0px;}
+#cnt .cnt_right .top_box ul li .apple{width:50px;height:40px;background-position:-32px -118px;}
+#cnt .cnt_right .top_box ul li .android{width:50px;height:40px;background-position:8px -118px;}
+#cnt .cnt_right .top_box ul li .email{width:60px;height:36px;background-position:-150px 0px;}
+#cnt .cnt_right .top_box ul li .nation{width:50px;height:40px;background-position:-69px -118px;}
+#cnt .cnt_right .top_box ul li .tent{width:50px;height:40px;background-position:-113px -150px;}
+#cnt .cnt_right .top_box ul li .read{width:50px;height:40px;background-position:12px 0px;}
+#cnt .cnt_right .pass{width:100%;height:50px;line-height:50px;}
+#cnt .cnt_right .pass span{margin-left:8px;}
+#cnt .cnt_right .pass:hover{background:#fff;}
+#cnt .cnt_right .pass .icon{display:inline-block;width:400px;height:400px;background-image:url("image/icon2.png");}
+#cnt .cnt_right .pass .star{width:119px;height:20px;background-position:0px 232px;margin-left:40px;}
+#cnt .cnt_right .pass:hover .star{color:#FFBA00;}
+#cnt .cnt_right .essay{height:228px;margin-top:10px;font-size:12px;background:#fff;border-top:1px solid #ccc;border-bottom:1px solid #ccc;}
+#cnt .cnt_right .essay:hover{border-left:2px solid #2E3138;}
+#cnt .cnt_right .essay ul li{padding:10px;border-bottom:1px dashed #ccc;}
+#cnt .cnt_right .essay ul li a{color:#111;}
+#cnt .cnt_right .essay ul li a:before{content:"●";margin-right:5px;}
+#cnt .cnt_right .essay ul li a:hover{color:#5FB3E9;}
+#cnt .cnt_right .essay ul li:first-child{border-bottom:1px solid #111;}
+#cnt .cnt_right .essay1{height:349px;background:#fff;}
+#cnt .cnt_right .essay1:hover{border-left:2px solid #2E3138;}
+#cnt .cnt_right .essay1 ul li{width:100%;height:68px;margin-top:10px;font-size:12px;border-bottom:1px dashed #ccc;font-family:"微软雅黑";}
+#cnt .cnt_right .essay1 ul li:nth-child(1){height:50px;margin-top:0px;border-bottom:1px solid #ccc;line-height:50px;padding-left:5px;}
+#cnt .cnt_right .essay1 ul li .items{padding-left:180px;}
+#cnt .cnt_right .essay1 img{float:left;padding:5px;}
+#cnt .cnt_right .essay1 ul li:last-child{height:50px;border-bottom:1px solid #ccc;;}
+#cnt .cnt_right .essay1 ul li .rights{display:block;height:30px;width:220px;background:#01A9F7;line-height:30px;text-align:center;margin-left:30px;border-radius:5px;font-size:14px;color:#fff;}
+#cnt .cnt_right .essay1 ul li .rights:hover{background:rgba(1,169,247,0.6);}
+#cnt .cnt_right .essay2{width:100%;height:220px;border-bottom:1px solid #ccc;}
+#cnt .cnt_right .essay2:hover{border-left:2px solid #ccc;}
+#cnt .cnt_right .item1{width:100%;height:330px;background:#fff;}
+#cnt .cnt_right .item1 .it1{border-bottom:1px solid #ccc;height:30px;width:100%;line-height:30px;padding-left:15px;}
+#cnt .cnt_right .item1 ul li{border-bottom:1px dashed #ccc;padding:15px;font-size:14px;}
+#cnt .cnt_right .item1 ul li img{float:left;margin-right:5px;}
+#cnt .cnt_right .item2{width:100%;height:180px;background:#28D28D;}
+#cnt .cnt_right .item2 .ad .t1{font-weight:bold;color:#28D28D;}
+#cnt .cnt_right .item2 .ad .t1 span{padding-left:100px;}
+#cnt .cnt_right .item2 .ad .t2{font-size:14px;color:#666;}
+#cnt .cnt_right .item2 img{width:280px;height:76px;}
+#cnt .cnt_right .item2 .ad{width:268px;height:94px;background:#fff;margin:1px 6px;position:relative;overflow:hidden;}
+/*上下切换按钮*/
+#cnt .cnt_right .item2 .ad .prev{display:block;position:absolute;top:0px;right:0px;height:46px;width:12px;border:1px solid #ccc;background:#fff;z-index:3;}
+#cnt .cnt_right .item2 .ad ul{position:absolute;height:1000%;width:268px;z-index:2;}
+#cnt .cnt_right .item2 .ad ul li{width:268px;height:100px;}
+#cnt .cnt_right .item2 .ad .prev .iconfont{text-align:center;line-height:47px;font-size:14px;color:#ccc;}
+#cnt .cnt_right .item2 .ad .next{display:block;position:absolute;top:47px;right:0px;height:46px;width:12px;background:#fff;border:1px solid #ccc;z-index:3;}
+#cnt .cnt_right .item2 .ad .next .iconfont{text-align:center;line-height:47px;font-size:14px;color:#ccc;}
+/*右侧内容*/
+#cnt .cnt_right .item3{height:200px;width:100%;background:#fff;overflow:hidden;}
+#cnt .cnt_right .item3 h3{height:30px;width:100%;border-bottom:1px solid #ccc;line-height:30px;}
+#cnt .cnt_right .item3 ul li{width:238px;height:90px;position:relative;border-bottom:1px dashed #ccc;margin-top:5px;}
+#cnt .cnt_right .item3 ul li img{float:left;padding-right:5px;height:36px;width:36px;}
+#cnt .cnt_right .item3 ul li .percentage{height:5px;width:200px;margin-left:40px;position:relative}
+#cnt .cnt_right .item3 ul li .per1{height:5px;width:180px;background:red;margin-left:40px;position:absolute;top:0px;left:0px;}
+#cnt .cnt_right .item3 ul li .per2{height:5px;width:60px;background:red;margin-left:40px;position:absolute;top:0px;left:0px;}
+#cnt .cnt_right .item3 ul li .per3{height:5px;width:100px;background:red;margin-left:40px;position:absolute;top:0px;left:0px;}
+#cnt .cnt_right .item4{height:360px;background:#fff;border-bottom:1px solid #ccc;position:relative;}
+#cnt .cnt_right .item4 h3{height:30px;width:100%;border-bottom:1px solid #111;line-height:30px;margin-bottom:10px;}
+#cnt .cnt_right .item4 img{margin-left:15px;}
+#cnt .cnt_right .item4 .number1{height:20px;width:20px;background:#F85050;line-height:20px;position:absolute;top:188px;left:110px;text-align:center;}
+#cnt .cnt_right .item4 .number2{height:20px;width:20px;background:#3498DB;line-height:20px;position:absolute;top:188px;left:244px;text-align:center;}
+#cnt .cnt_right .item4 .book{height:60px;width:100%;border-bottom:1px dashed #ccc;line-heigt:60px;padding:5px;}
+#cnt .cnt_right .item4 .book .num{display:inline-block;width:20px;height:20px;background:#111;color:#fff;text-align:center;line-height:20px;text-align:center;margin-top:10px;}
+#cnt .cnt_right .item4 .s1{border:none;}
+#cnt .cnt_right .item4 .book .num1:hover{background:#F85050;}
+#cnt .cnt_right .item4 .book .num2:hover{background:#3498DB;}
+#cnt .cnt_right .item4 .book a{color:#111;font-size:12px;}
+#cnt .cnt_right .item5{width:100%;height:166px;background:#fff;font-size:12px;}
+#cnt .cnt_right .item5 P{padding:10px 5px;border-bottom:1px solid #111;}
+#cnt .cnt_right .item5 span{padding-left:180px;}
+#cnt .cnt_right .item5 .p2{padding:10px;font-size:12px;border-bottom:1px dashed #ccc;}
+#cnt .cnt_right .item5 .p2 a{color:#111;}
+#cnt .cnt_right .item5 .p2 a:hover{color:#0059AE;}
+/*底部*/
+#foot{height:312px;width:1349px;background:#3A3E47;}
+#foot .cnt{height:40px;width:1000px;background:#2D3037;margin:0 auto;}
+#foot .cnt ul li{float:left;margin:0px 23px;height:40px;width:120px;line-height:40px;text-align:center;font-size:12px;}
+#foot .cnt ul li a{color:#fff;}
+#foot .cnt ul li:hover{background:#3A3E47;}
+#foot .cnt1{height:70px;width:1000px;margin:10px auto;}
+#foot .title{border-bottom:1px solid #ccc;padding:5px;font-size:12px;}
+#foot .cnt1 p a{color:#fff;}
+#foot .cnt1 ul li{float:left;font-size:12px;padding:5px;}
+#foot .cnt1 ul li a{color:#fff;}
+#foot .cnt1 ul li a:hover{color:#005AAF;}
+#foot .cnt2{text-align:center;}
+</style>
+ </head>
+ <body>
+  <div id="top">
+	<div class="nav_top">
+		 <div class="regist">
+		   <a href="#" class="actile">投稿</a>
+		   <a href="#">注册</a>
+		   <a href="#">登录</a>
+		  </div>
+	</div>
+ </div>
+	<div id="nav_band">
+		<div class="navbox">
+				<a href="#"><img src="image/logo.png" alt="虎嗅"></a>
+				<div class="nav_left">
+					<ul class="nav_list">
+						<li class="s1">
+							<a href="#" class="list1">资讯</a><i class="iconfont">&#xe652;</i>
+							<div class="list2">
+									<p class="news"><a href="#">看点</a></p>
+									<p class="news"><a href="#">观点</a></p>
+									<p class="news"><a href="#">读点</a></p>
+									<p class="news"><a href="#">图说</a></p>
+									<p class="news"><a href="#">标签</a></p>
+							</div>
+						</li>
+						<li><a href="#" class="list1">用点</a></li>
+						<li><a href="#" class="list1">文集</a></li>
+						<li class="s2"> 
+							 <a href="#" class="list1">活动</a></a><i class="iconfont">&#xe652;</i>
+							 <div class="list3">
+								<div class="act"><a href="#">虎嗅活动</a>
+									<div class="cnt">
+										<p><a href="#">虎嗅F&M创新节</a></p>
+										<p><a href="#">TOP DAY</a></p>
+										<p><a href="#">上道沙龙</a></p>
+										<p><a href="#">WoW!营销会</a></p>
+										<p><a href="#">虎嗅听书会</a></p>
+										<p><a href="#">更多虎嗅活动</a></p>
+									</div>	
+								</div>
+								<div><a href="#">虎嗅日历</a></div>
+							</div>
+						</li>
+						<li><a href="#" class="list1">群组</a></li>			
+					</ul>
+					<div class="nav_right">
+						<p class="search"><input type="text"placeholder="请输入搜索内容..."></p>
+						<a href="#"class="bns"><i class="iconfont">&#xf016e;</i></a>
+					</div>
+				</div>
+		</div>		
+	</div>
+	<!--内容区域-->
+	<div id="cnt">
+	    <!--左边-->
+		<div class="cnt_left">
+			  <div class="title">
+				<h1><a href="#">战胜97年历史的赫兹？神州租车效益“漂亮”得不像实力派</a></h1>
+				<p>在运营及服务能力上，赫兹甩神州好几条街了</p>
+			  </div>
+			  <a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/071503481105.png"alt=""></a>
+			  <div class="author">
+				<a href="#" style="color:#111;">Eastland</a>
+				<i style="font-size:12px;">2015-08-29 07:27</i> 
+				<a href="#" class="s1">神州租车</a> 
+				<a href="#" class="s1">财报</a> 
+				<a href="#" class="s1">头条</a>
+			  </div>
+			  <div class="ims">
+				<a href="#"><span class="icon share"></span></a>
+				<a href="#"><span class="icon trangle"></span></a>
+				<a href="#"><span class="icon cmt"></span></a>
+			  </div>
+			  <!--主旨内容区域盒子-->
+			  <div class="cnt_box">
+				<ul>
+					  <li>
+						<div class="list1">
+							<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/191346844271.jpg!141x250"></a></p>
+							<div class="inform">
+								<h3><a href="#">一亩田千人裁员，这家号称日交易额破3亿的公司怎么了？</a></h3>
+								<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+								<p>一位内部员工表示，可能是因为资方撤资导致资金流断裂</p>
+								<p>一亩田 裁员 </p>
+							</div>
+						</div>
+						<span class="hot">热</span>
+						<span class="hots"></span>
+					  </li>
+					  <li>   
+						  <div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/175606694199.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">谷歌Facebook亚马逊这些巨头是如何“从小处着手做起”？</a></h3>
+									<p><a href="#">天地会珠海分舵</a><span>2015-08-29 18:00</span></p>
+									<p>专注一件事，并把它做好</p>
+									<p>谷歌 Facebook 亚马逊 </p>
+								</div>
+							</div> 
+					  </li>
+					  <li>   
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/173613518638.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">正在被“互联网+”的拍卖行：淘宝京东先入为主，百度慢随</a></h3>
+									<p><a href="#">陇之江</a><span>2015-08-29 17:38</span></p>
+									<p>网络拍卖会成为互联网下一个“必争之地”吗</p>
+									<p>拍卖 互联网 </p>
+								</div>
+							</div> 
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/163850461294.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">《吴亦凡即将入伍》背后的故事：创意比技术更重要</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>吴亦凡入伍的案例最大的意义可能在于让大家知道“原来H5还可以这样玩”</p>
+									<p>吴亦凡 HTML5  </p>
+								</div>
+							</div> 
+					  </li>
+					  <div class="particular">
+							<a href="#"><img src="http://images.huxiu.com/upload/zhuanti/20150727/a089a58fc431c16a12cf945c069b93c8.jpg"style="border:none;"></a>
+							<span>#工业互联网# 互联网公司的魔爪，为何伸不进医院</span></a>
+							<span class="hot1">特别策划</span>
+							<span class="hots1"></span>
+					  
+					  </div>
+					  <li>
+						<div class="list1">   
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/150106432444.png!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">饿了么6.3亿美元F轮“系列”融资揭底：极度缺钱，无他！</a></h3>
+									<p><a href="#">李清乐</a><span>2015-08-29 19:17</span></p>
+									<p>饿了么的独家财务顾问华兴资本，突然向媒体发出邮件，要求撤回已发布的融资公告稿件</p>
+									<p>饿了么 O2O 华兴资本  </p>
+								</div>
+							</div>
+					  
+					  </li>
+					  <li>
+						<div class="list1">  
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/140251651398.png!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">美团、百度外卖都干不下去了，早餐O2O还有未来吗？</a></h3>
+									<p><a href="#">科学的fan</a><span>2015-08-29 14:06 </span></p>
+									<p>早餐又烧钱又不能帮助增加业绩，对于原本就大规模亏损的美团，关闭如此鸡肋的项目是注定的</p>
+									<p>美团 O2O 百度  </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/191346844271.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">一亩田千人裁员，这家号称日交易额破3亿的公司怎么了？</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>一位内部员工表示，可能是因为资方撤资导致资金流断裂</p>
+									<p>一亩田 裁员 </p>
+								</div>
+							</div>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/124549192654.png!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#"target="_blank"><a href="#">张泉灵、黄健翔、罗振宇……都有哪些央视主持人离职投奔互联网</a></h3>
+									<p><a href="#">陇之江</a><span>2015-08-29 19:17</span></p>
+									<p>虽然央视这个平台给了他们名和利，但理想不完成，总觉得有遗憾</p>
+									<p>央视 互联网 罗振宇  </p>
+								</div>
+							</div>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/191346844271.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">一亩田千人裁员，这家号称日交易额破3亿的公司怎么了？</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>一位内部员工表示，可能是因为资方撤资导致资金流断裂</p>
+									<p>一亩田 裁员 </p>
+								</div>
+							</div>
+					  </li>
+					  <li>  
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/115950258691.png!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">可穿戴市场前五名格局已定，创业公司没戏了？</a></h3>
+									<p><a href="#">国仁</a><span>2015-08-29 12:01 </span></p>
+									<p>智能手机出货量前五的玩家中，与穿戴产品前五的玩家重合有3家，说明穿戴市场到底还是被这些移动终端厂商在把持</p>
+									<p>可穿戴 Apple Watch Fitbit  </p>
+								</div>
+							</div>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/29/101044942372.png!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">奇虎360离职员工走心长文：我眼中的霸道总裁周鸿祎</a></h3>
+									<p><a href="#">qxl5918</a><span>2015-08-29 19:17</span></p>
+									<p>是一个有爱心的产品人，为用户考虑，也是一个生活中很随和的长者，但也是一个霸道总裁</p>
+									<p>360 周鸿祎 奇虎360 </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/071050467815.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">乐视引入的“韩博士”曾如何玩残一家上市公司并全身而退</a></h3>
+									<p><a href="#">伯通</a><span>2015-08-29 19:17</span></p>
+									<p>就凭韩博士曾在资本市场纵横捭阖又全身而退的经历来看，倒和乐视的气质，有那么一点相似的</p>
+									<p>乐视 上市公司 头条 </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/184211508438.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">【Jin句】王自健：“我老老实实研发手机，不出来招惹别人也不吹牛逼”</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>冯唐：“女生说暖男的时候有一种实用主义的无奈”</p>
+									<p>Jin句</p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/192520975447.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">硅谷今年的融资额创了记录，那什么样的创业项目容易拿到风投？</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>每年有大约50万的初创公司成立，但其中只有一千家左右能得到风投。</p>
+									<p>创业 创业公司 风险投资 </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/190347962845.png!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">周鸿祎见小暗大，欲降私有化报价，股民可会买单？</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>别盯着这十多块的差价，毁了一桩买卖，到时候得不偿失的还是自己</p>
+									<p>奇虎360 周鸿祎 </p>
+								</div>
+							</div>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/184803218320.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">优酷副总裁卢梵溪证实离职创业，昭示视频渠道与内容的势力逆转？</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>那么，为什么不亲自成为叫兽易小星？</p>
+									<p>一亩田 裁员 </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/171147425428.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">用来装逼的知识技能，如何拿来赚钱？听行家怎么说</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>一技傍身走天下，认知盈余商业化。</p>
+									<p>共享经济 O2O 上道</p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/171413068594.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">中信专项资产管理计划，暴露Uber“狗扯羊皮”的估值方式</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>Uber的商业模式创新值得大赞特赞，投资人蜂拥而至亦不为怪，但为人理财不应如此草率!</p>
+									<p>Uber 估值 </p>
+								</div>
+							</div> 
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/160922789796.jpeg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">饿了么获6.3亿美元F轮融资，在外卖O2O之路上“舍命狂奔”</a></h3>
+									<p><a href="#">李清乐</a><span>2015-08-29 19:17</span></p>
+									<p>新一轮融资对饿了么来讲，算是捡回了“半条命”，要续命，下一轮融资最可能的途径就是上市了</p>
+									<p>饿了么 美团 O2O ... </p>
+								</div>
+							</div> 
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/153721691125.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">【一周明星公司吐槽大会】从未关注过联想，但Moto是个神话#联想#</a></h3>
+									<p><a href="#">虎嗅</a><span>2015-08-29 19:17</span></p>
+									<p>以后别再说“从未关注联想”这种怪伤心的话</p>
+									<p>联想 吐槽  </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>
+					  <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/162928916818.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">阿里影业包装了“电影云”来助力影院经理，但也给了他们新的经营难题</a></h3>
+									<p><a href="#">陈昌业</a><span>2015-08-29 19:17</span></p>
+									<p>很多难题可以通过技术手段解决，但同时也需要影院经理们提高经营能力来“适配”高效的技术系统</p>
+									<p>阿里影业 投稿 电影产业 </p>
+								</div>
+							</div>
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>	
+					   <li>
+						<div class="list1">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/151120668274.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">一个敢于给唱片打零分的乐评网站，如何影响了美国音乐行业</a></h3>
+									<p><a href="#">新音乐产业观察 </a><span>2015-08-29 19:17</span></p>
+									<p>它还逆流而上，做了音乐杂志和音乐节</p>
+									<p>音乐产业 </p>
+								</div>
+							</div> 
+							<span class="hot">热</span>
+							<span class="hots"></span>
+					  </li>	
+					   <li>
+						<div class="list1" style="border-bottom:1px solid #ccc;">
+								<p><a href="#"target="_blank"><img src="http://images.huxiu.com/article/cover/201508/28/151030491736.jpg!141x250"></a></p>
+								<div class="inform">
+									<h3><a href="#">谷歌、Facebook、YouTube...的第一版都如此简陋，为何却成功了？</a></h3>
+									<p><a href="#">陈昌业</a><span>2015-08-29 19:17</span></p>
+									<p>“我们所知所爱的事物，都始于精简”</p>
+									<p>谷歌 Facebook Youtube . </p>
+								</div>
+							</div> 
+					  </li>	
+				</ul>
+				 <div class="view">
+					<p class="v1"><a href="#"target="_blank">看点</a><br><span>推荐：战胜97年...</span></p>
+					<p class="v1"><a href="#"target="_blank">观点</a><br><span>推荐:《吴亦凡即...</span></p>
+					<p class="v1"><a href="#"target="_blank">读点</a><br><span>推荐：如果你今年...</span></p>
+					<p class="v1" style="border:none;"><a href="#"target="_blank">图说</a><br><span>推荐：李彦宏、任...</span></p> 
+				 </div>
+			  </div> 
+		</div>
+		<!--右边内容-->
+		<div class="cnt_right">
+			<div class="top_box">
+				<ul>
+					<a href="#"><li class="color1"><span class="icon weixin"title="微信公众号"></span></li></a>
+					<a href="#"><li class="color2"><span class="icon weibo"title="微博"></span></li></a>
+					<a href="#"><li class="color3"><a href="#"><span class="icon apple"title="ios客户端"></span></li></a>
+					<a href="#"><li class="color4"><a href="#"><span class="icon android"title="android客户端"></span></li></a>
+					<a href="#"><li class="color5"><a href="#"><span class="icon email"title="订阅虎嗅"></span></li></a>
+					<a href="#"><li class="color6"><a href="#"><span class="icon nation"title="国际站"></span></li></a>
+					<a href="#"><li class="color7"><a href="#"><span class="icon tent"title="腾讯微博"></span></li></a>
+					<a href="#"><li class="color8"><a href="#"><span class="icon read"title="收藏"></span></li></a>
+				</ul>
+			</div>
+			<div class="pass"><span>作者认证通道</span><span class="icon star"></span></div>
+			<div class="essay">
+				<ul >
+					<li>热门文章</li>
+					<li><a href="#">“全球性股灾”突如其来！投资家...</a></li>
+					<li><a href="#">罗永浩与坚果：一支强弩的妥协</a></li>
+					<li><a href="#">坚果手机：罗永浩以退为进的战略...</a></li>
+					<li><a href="#">周鸿祎终于发布奇酷真机，尊享版...</a></li>
+					<li><a href="#">曾赶走乔布斯的苹果前CEO又出...</a></li>
+				</ul>
+			</div>
+			<div class="essay1">
+				<ul >
+					<li>创业版<span class="items"><a href="#">更多项目</a></span></li>
+					<li><a href="#"><img src="http://images.huxiu.com/chuangye/2015/08/698_1440675020.png"width="94"height="60"></a> 
+						<p>生日管家</p>
+						<p>友谊与爱 不可辜负</p>
+					</li>
+					<li><a href="#"><img src="http://images.huxiu.com/chuangye/2015/08/688_1440644598.jpg"width="94"height="60"></a>
+						<p> 垂衣 CHAMPZE..</p>
+						<p>用算法＋专业理型师的方式，帮怕麻烦又高要.. 垂衣 CHAMPZE..</p>
+					</li>
+					<li><a href="#"><img src="http://images.huxiu.com/chuangye/2015/08/687_1440640367.png"width="94"height="60"></a>
+						 <p>ExpatExpre..</p>
+						 <p>Your best friend ..</p>
+					</li>
+					<li><a href="#" class="rights">立即报名,马上有奖</a></li>
+				</ul>
+			</div>
+			<div class="essay2">
+				<img src="http://ubmcmm.baidustatic.com/media/v1/0f0005UspKWVAU721PDpss.jpg">
+			</div>
+			<div class="item1">
+				<p class="it1">赞助内容</p>
+				<ul>
+					<li><a href="#"><img src="http://images.huxiu.com/upload/zhuanti/20150806/c1dfd88a1748e7a806b883b9506b0103.jpg"></a>
+						<p>#DT生态#</p> 
+						<p>第一次，阿里云成为阿里增长最快业务!</p>
+					</li>
+					<li><a href="#"><img src="http://images.huxiu.com/upload/zhuanti/20150721/7ba502382e9497e3e83397842d204c85.jpg"></a>
+						<p>#能效管理# </p> 
+						<p>避免网络“抖动”，关键还在这儿</p>
+					</li>
+					<li><a href="#"><img src="http://images.huxiu.com/upload/zhuanti/20140811/a47da92c3932abc9e54db95ce39c4650.png"></a>
+						<p>#突破者# </p> 
+						<p>任性吗？互联网巨头之后，中国平安也盯上免费WiFi了</p>
+					</li>
+				</ul>
+			</div>
+			<div class="item2">
+				<img src="image/lagou.png">
+				<div class="ad">
+					<a href="javascript:void(0)" class="prev"><i class="iconfont">&#xf02ef;</i></a>
+					<a href="javascript:void(0)" class="next"><i class="iconfont">&#xe652;</i></a>
+					<ul id="slide">
+						<li>
+							<p class="t1">公关经理<span>10k-15k</span></p>
+							<p class="t2">鼎梵数码科技</p>
+							<p class="t2">职位诱惑: 薪酬高于广州地区同行业水平，...</p>
+						</li>
+						<li>
+							<p class="t1">业务分析师<span>12k-20k</span></p>
+							<p class="t2">嘀嗒拼车</p>
+							<p class="t2">职位诱惑: 五险一金，直接汇报创始人</p>
+						</li>
+						<li>
+							<p class="t1">市场总监<span>12k-20k</span></p>
+							<p class="t2">银江集团</p>
+							<p class="t2">职位诱惑: 发展空间大、股权激励</p>
+						</li>
+						<li>
+							<p class="t1">数据分析师<span>10k-15k</span></p>
+							<p class="t2">51Talk无忧英语</p>
+							<p class="t2">职位诱惑: 北京最自由幸福的创业团队，弹...</p>
+						</li>
+						<li>
+							<p class="t1">市场总监<span>10k-15k</span></p>
+							<p class="t2">魔线科技公司</p>
+							<p class="t2">职位诱惑: 美国上市公司，福利齐全。</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript"src="js/jquery-1.11.2.min.js"></script>
+			<script type="text/javascript">
+			/*上一页*/
+			    $(".prev").click(function(){
+					$("#slide").prepend($("#slide li:first"));
+				});
+			   /*下一页*/
+				$(".next").click(function(){
+					$("#slide").append($("#slide li:last"));
+				});
+				/*自动播放*/
+				function autoPlay(){
+					$("#slide").append($("#slide li:first"));
+					$("#slide").css("top","0px");
+					$("#slide").animate({"top":"-100px"},500);
+				}
+				autoPlay();
+				var setTime = setInterval(autoPlay,2000);//自动1秒钟播放
+				$(".prev,.next").hover(function(){
+					clearInterval(setTime);
+				},function(){
+					setTime = setInterval(autoPlay,2000);})
+			</script>
+	
+			<div class="item3">
+				<h3>本周最活跃的认证作者</h3>
+				<ul class="banner">
+					<li><img src="http://images.huxiu.com/auth/data/avatar/000/03/83/85_avatar_small.jpg">
+						<p>毛琳Michael</p>
+						<p>活跃度 - - -90%</p>
+						<div class="percentage">
+							<p class="per1"></p>
+						</div>		
+					</li>
+					<li><img src="http://images.huxiu.com/auth/data/avatar/001/33/77/03_avatar_small.jpg">
+						<p>毛琳Michael</p>
+						<p>活跃度 - - -30%</p>
+						<div class="percentage">
+							<p class="per2"></p>
+						</div>
+						
+					</li>
+					<li><img src="http://images.huxiu.com/auth/data/avatar/000/04/92/12_avatar_small.jpg">
+						<p>毛琳Michael</p>
+						<p>活跃度 - - -50%</p>
+						<div class="percentage">
+							<p class="per3"></p>
+						</div>
+					</li>
+					<li><img src="http://images.huxiu.com/auth/data/avatar/000/32/80/34_avatar_small.jpg">
+						<p>毛琳Michael</p>
+						<p>活跃度 - - -90%</p>
+						<div class="percentage">
+							<p class="per1"></p>
+						</div>	
+					</li>
+					<li><img src="http://images.huxiu.com/auth/data/avatar/000/04/36/70_avatar_small.jpg">
+						<p>毛琳Michael</p>
+						<p>活跃度 - - -90%</p>
+						<div class="percentage">
+							<p class="per1"></p>
+						</div>	
+					</li>
+				</ul>
+			</div>
+			<script type="text/javascript"src="js/jquery-1.11.2.min.js"></script>
+			<script type="text/javascript">
+				function autoPlay(){
+					$(".banner").append($(".banner li:first"));
+					$(".banner").css("top","0px");
+					$(".banner").animate({"top":"-90px"},500);
+				}
+				autoPlay();
+				var setTime = setInterval(autoPlay,2000);//自动1秒钟播放
+				$(".prev,.next").hover(function(){
+					clearInterval(setTime);
+				},function(){
+					setTime = setInterval(autoPlay,2000);})
+			
+			
+			</script>
+			<div class="item4">
+				<h3>每日推荐</h3>
+				<a href="#"><img src="http://images.huxiu.com/article/cover/201508/24/151004961881.jpg!156x115"></a>
+				<a href="#"><img src="http://images.huxiu.com/article/cover/201508/18/102121573959.jpg!156x115"></a>
+				<p class="number1">1</p>
+				<p class="number2">2</p>
+				<div class="book">
+					<a href="#"><span class="num num1">1</span></a>
+					<a href="#">《增长黑客》：Hotmail和Twitter在创业初期是这样用巧劲实现用户增长的</a>
+				</div>
+				<div class="book s1">
+					<a href="#"><span class="num num2">2</span></a>
+					<a href="#">《方法革命》：这些创新方法因互联网而生，改变了我们的生活方式</a>
+				</div>
+			</div>
+			<div class="item5">
+				<p>Jin句<span><a href="#">更多</a></span></p>
+				<p class="p2"><a href="#">【Jin句】王自健：“我老老实实研发手机，不出来招惹别人也不吹牛逼”</a></p>
+				<p class="p2"><a href="#">【Jin句】罗永浩：“如果我是同志，一定会出柜”</a></p>
+			</div>
+		</div>
+	</div>
+	<!--底部-->
+	<div id="foot">
+		<div class="cnt">
+			<ul>
+				<li><a href="#">加入我们</a></li>
+				<li><a href="#">广告及服务</a></li>
+				<li><a href="#">常见问题解答</a></li>
+				<li><a href="#">提建议</a></li>
+				<li><a href="#">防网络诈骗专题</a></li>		
+			</ul>
+		</div>
+		<div class="cnt1">
+			<p class="title"><a href="#">关于我们</a></p>
+			<ul>
+				 <li><a href="#">合作伙伴</a></li>
+				 <li><a href="#">阿里云</a></li>
+				 <li><a href="#">独物</a></li> 
+				 <li><a href="#">传媒梦工场</a></li>
+				 <li><a href="#">3W传播</a></li> 
+				 <li><a href="#">拉勾网</a></li>
+				 <li><a href="#">会点网</a></li> 
+				 <li><a href="#">猎聘网</a></li> 
+				 <li><a href="#">推酷</a></li> 
+				 <li><a href="#">硬蛋网</a></li>
+				 <li><a href="#">Iconfans</a></li>
+				 <li><a href="#">FreeBuf</a></li>
+				 <li><a href="#">黑客与极客</a></li>
+				 <li><a href="#">中国企业家</a></li>
+				 <li><a href="#">cnbeta</a></li> 
+				 <li><a href="#">Android开发者社区</a></li>
+				 <li><a href="#">又拍云存储</a></li>
+				 <li><a href="#">开源中国社区</a></li> 
+			</ul>
+		</div>
+		<div class="cnt1">	
+			  <p class="title"><a href="#">内容合作伙伴</a></p>
+			  <ul>
+				<li><a href="#">财经网</a></li>
+				<li><a href="#">新浪科技</a></li> 
+				<li><a href="#">新浪财经</a></li>
+				<li><a href="#">凤凰科技</a></li>
+				<li><a href="#">凤凰财经</a></li>
+				<li><a href="#">i黑马</a></li>
+				<li><a href="#">新财富</a></li>
+				<li><a href="#">网易科技</a></li>
+				<li><a href="#">搜狐IT</a></li>
+				<li><a href="#">观察者网</a></li>
+				<li><a href="#">创业邦</a></li>
+				<li><a href="#">天下网商</a></li>
+				<li><a href="#">TechWeb </a></li>
+				<li><a href="#">新浪创业</a></li>
+				<li><a href="#">和讯科技</a></li>
+				<li><a href="#">品途O2O</a></li>
+				<li><a href="#">极客公园</a></li>
+				<li><a href="#">卖家网</a></li>
+				<li><a href="#">智东西</a></li>
+			 </ul>
+		</div>
+		<div class="cnt2">Copyright © 虎嗅网 - 北京云觅信息科技有限公司 京ICP备12013432号-1 电话：010-57538166</div>
+	</div>
+ </body>
+</html>
+											

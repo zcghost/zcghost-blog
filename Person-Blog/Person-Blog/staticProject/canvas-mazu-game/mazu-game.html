@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简易祖玛游戏</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:black;}
+#div1{ background:white; width:600px; margin:20px auto;}
+</style>
+<script>
+window.onload = function(){
+	var oC = document.getElementById('c1');
+	var oGC = oC.getContext('2d');
+	var i = 0;
+	// 引入图片
+	var yImg = new Image();  // 创建一个图片对象
+	yImg.src = 'person.png';
+	yImg.onload = function(){
+
+
+	    setInterval(function(){
+		oGC.clearRect(0,0,oC.width,oC.height);  // 每次画之前，把前一次的画布给清空掉
+		oGC.beginPath();                        // 开始绘制
+		//弧度 = 角度 * Math.PI/180
+		oGC.arc(300,200,200,-90*Math.PI/180,180*Math.PI/180,false); // 绘制大半圆弧
+		oGC.stroke();                                               // 用线绘制
+		
+		oGC.beginPath();
+		oGC.arc(250,200,150,180*Math.PI/180,360*Math.PI/180,false);  // 绘制中间的大半圆弧，从180到360
+		oGC.stroke();                                                // 用线绘制
+		oGC.beginPath();                                             // 开始
+		oGC.arc(400,200,20,0*Math.PI/180,360*Math.PI/180,false);     // 结束的那个小圆
+		oGC.stroke();
+
+		for(var i=0;i<ball.length;i++){
+			
+			oGC.beginPath();
+			oGC.moveTo(ball[i].x,ball[i].y);  // 每一个球的中心点，x轴，y轴，起始点
+			oGC.arc(ball[i].x,ball[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
+			oGC.fill();  // 生成实心的圆填充
+		}
+		// 子弹循环
+		for(var i=0;i<bullet.length;i++){
+			oGC.save();
+			oGC.fillStyle="#ff3399";
+			oGC.beginPath();
+			oGC.moveTo(bullet[i].x,bullet[i].y);  // 每一个球的中心点，x轴，y轴，起始点
+			oGC.arc(bullet[i].x,bullet[i].y,20,0*Math.PI/180,360*Math.PI/180,false);
+			oGC.fill();  // 生成实心的圆填充
+		    oGC.restore();
+		}
+		// 把图添加到画布中
+		oGC.save();  // 先保存一下
+		oGC.translate(300,200);  // 把图片平移到中心
+		oGC.rotate(iRotate);     // 通过鼠标来控制弧度，每次对着鼠标的方向进行移动
+		oGC.translate(-40,-40); 
+		oGC.drawImage(yImg,0,0); // 第一参数是图片,后两个为图的坐标
+		oGC.restore();           // 结束，这样图片就不会整体平移出去了的
+
+		// 添加文字
+		oGC.save();
+		oGC.font = '60px impact';    // 文字的大小
+		oGC.textBaseline = 'top';
+		oGC.fillStyle = 'red';
+		oGC.shadowOffsetX = 10;    // 设置文字的阴影
+		oGC.shadowOffsetY = 10;    // 设置文字的阴影
+		oGC.shadowColor = '#0066ff';  // 阴影颜色
+		oGC.shadowBlur = 5;
+		var w = oGC.measureText('简易祖玛游戏').width;   // 文字的宽度
+		var h = 60;                                      // 文字的高度
+		oGC.fillText('简易祖玛游戏', (oC.width - w)/2 , 450 ); // canvas中添加文字，450表示指定的高度
+	    oGC.restore();
+
+	},1000/60);//多长时间更新一次呢，一般都是60分之1000
+	// 开一个定时器，动态的改变这个小圆
+	setInterval(function(){
+		
+		for(var i=0;i<ball.length;i++){
+			
+			ball[i].num++;  // 小球的数量累加
+			if(ball[i].num == 270){ // 当小球走到270度时，不要让它围着大圆走，而是围绕着小圆走
+			   ball[i].r = 150;     // 小圆的半径为150
+			   ball[i].startX = 250;  // 小圆的起始点为150
+			   ball[i].startY = 50;   // 小圆的起始为50
+			}
+            // 当小圆到达终点时，提示游戏结束
+			if(ball[i].num == 270+180){
+			    alert('游戏结束,重新开始吧');
+				window.location.reload();  //刷新页面
+			};
+			
+			ball[i].x = Math.sin(ball[i].num*Math.PI/180) * ball[i].r + ball[i].startX;  // 小球2的中心点坐标(三角公式),用正玄公式求得小球2x轴的坐标
+			ball[i].y = ball[i].r - Math.cos(ball[i].num*Math.PI/180) * ball[i].r + ball[i].startY;  // 小球2的y坐标得到的是小球2d的距离
+			
+		}
+		   // 子弹出来
+		   for(var i = 0;i<bullet.length;i++){
+		      bullet[i].x = bullet[i].x+bullet[i].sX;
+			  bullet[i].y = bullet[i].y+bullet[i].sY;
+		   }
+		   // 小球碰撞
+		   for(var i = 0;i<bullet.length;i++){
+		       for(var j = 0;j<ball.length;j++){
+			      if(pz(bullet[i].x,bullet[i].y,ball[j].x,ball[j].y)){
+				      // 利用数组splice，两球碰撞时，删掉就可以了的
+					  bullet.splice(i,1);
+					  ball.splice(j,1);
+					  break; // 删完之后，跳出整个循环，以免程序出错
+				  }
+			   }
+		   }
+	},30);
+	// 做一个小球在最顶部，用数组给存起来，有很多个小球
+	var ball = [];
+	/*
+	ball[0] = {  
+		x : 300,   // 小球的横坐标x
+		y : 0,     // 小球的纵坐标y，0
+		r : 200,   // 半径是固定的
+		num : 0,   // 角度累加
+		startX : 300,  // 小圆开始的坐标为300
+		startY : 0     // 小圆开始的坐标是0
+	};
+    */
+    // 开一个定时器
+	setInterval(function(){
+	    ball.push({
+		   x:300,  // 小球的横坐标x
+		   y:0,     // 小球的纵坐标y，0
+		   r:200,   // 半径是固定的
+		   num:0,   // 角度累加
+		   startX:300, // 小圆开始的坐标为300
+		   startY:0    // 小圆开始的坐标是0
+		});
+	},350);  // 往数组中进行push添加
+	    var iRotate = 0;  // 定义旋转为0
+		oC.onmousemove = function(ev){
+		    var ev = ev || window.event;
+			var x = ev.clientX-oC.offsetLeft; // 得到鼠标的x值
+			var y = ev.clientY-oC.offsetTop;  // 得到鼠标的y值
+			
+			var a = x-300;
+			var b = y-200;
+			var c = Math.sqrt(a*a+b*b);  // 开根号
+		    if(a>0 && b>0){
+				iRotate = Math.asin(b/c)+90*Math.PI/180;
+			
+			}else if(a>0){
+			  iRotate = Math.asin(a/c);  // 一个三角函数，得到的是弧度
+			}
+			// 负方向的,这样的话，图像就可以跟着鼠标方向进行旋转了的
+			if(a<0 && b>0){
+				iRotate = -(Math.asin(b/c)+90*Math.PI/180);
+			
+			}else if(a<0){
+			  iRotate = Math.asin(a/c);  // 一个三角函数，得到的是弧度
+			}
+		};
+		var bullet = []; // 创建子弹
+		oC.onmousedown = function(ev){
+		    var ev = ev || window.event;
+			var x = ev.clientX-oC.offsetLeft;
+			var y = ev.clientY-oC.offsetTop;
+			var a = x-300;
+			var b = y-200;
+			var c = Math.sqrt(a*a+b*b);
+
+			var speed = 5;
+			var sX = speed*a/c;  // 分解x轴的速度
+			var sY = speed*b/c;  // 分解y轴的速度
+			// 把速度添加到子弹中的
+			bullet.push({
+			    x:300,   // x轴的坐标
+				y:200,   // y轴的坐标
+				sX:sX,   // x轴的速度
+				sY:sY    // y轴的速度
+			});
+
+		};
+	};
+    // 碰撞小球的检测
+	function pz(x1,y1,x2,y2){
+	   var a = x1-x2;
+	   var b = y1-y2;
+	   var c = Math.sqrt(a*a+b*b);
+	   if(c<40){
+	      return true;
+	   }else{
+	     return false;
+	   }
+	
+	}
+	/*oGC.beginPath();
+	//弧度 = 角度 * Math.PI/180
+	oGC.arc(300,200,200,-90*Math.PI/180,180*Math.PI/180,false);
+	//oGC.closePath();
+	oGC.stroke();
+	
+	oGC.beginPath();
+	oGC.arc(250,200,150,180*Math.PI/180,360*Math.PI/180,false);
+	oGC.stroke();
+	oGC.beginPath();
+	oGC.arc(400,200,20,0*Math.PI/180,360*Math.PI/180,false);
+	oGC.stroke();*/
+	
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<canvas id="c1" width="600" height="600"></canvas>
+</div>
+</body>
+</html>

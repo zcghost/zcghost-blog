@@ -1,0 +1,32 @@
+@charset "utf-8";
+/*公共样式开始*/
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+body{font:12px/16px arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;}
+a{text-decoration:none;line-height:20px;transition:all 0.5s linear;}
+ul,li{list-style-type:none;}
+img{border:none;}
+:focus{outline:none;/*当获得焦点的时候，轮廓删掉去除*/}
+/*公共样式结束*/
+/*html5标签块*/
+header,footer,section,aside,nav,article,details,figure,hgroup,menu,nav{display:block;}
+.nav_body{background:#242B2E;color:#fff;}
+.show_body{background:#E2E1DD;}
+/*导航样式，兼容谷歌浏览器*/
+.logo{display:box;display:-webkit-box;-webkit-box-align:center;-webkit-box-pack:center;width:100%;}
+.logo img{padding:10px;width:99%;}
+.nav_list summary{cursor:pointer;height:40px;padding:10px;position:relative;}
+.nav_list summary img{float:left;margin-right:10px;}
+.nav_list summary:hover{background:#23aeac;transition:all 0.5s linear;}
+.nav_list .homework{background:rgba(255,255,255,0.5)}
+.nav_list .homework li a{display:block;padding-left:20px;line-height:30px;color:#fff;}
+.nav_list .homework li a:hover{background:#23aeac;font-size:14px;}
+/*内容样式开始*/
+.list{padding-left:20px;-webkit-column-width:240px;/*分栏，分一栏*/}
+.list .grid{background:#fff;width:240px;min-height:100px;padding:15px 10px;margin:15px 0px;box-shadow:6px 3px 10px #ccc; }
+.list .grid p{color:#333;text-indent:2em;}
+.list .grid a{display:block;}
+.list .grid a .imgholder{overflow:hidden;}
+.list .grid a .imgholder img{transition:all 0.5s ease;}
+.list .grid a:hover img{transform:scale(1.1);transition:all 0.5s ease;}
+.list .grid a:hover p{font-size:14px;color:#abcdef;transition:all 0.5s ease;}
+/*内容样式结束*/

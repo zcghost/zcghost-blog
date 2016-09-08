@@ -1,0 +1,124 @@
+/*
+    author:zhenchuan.wang
+    descor:PersonBlog
+    time:2016-6-3
+ * */
+/*公共样式开始*/
+body {
+	font: 14px/1.5 \5b8b\4f53, Microsoft YaHei;
+	color: #666;
+	font-family: Microsoft YaHei;
+	font-family: "微软雅黑";
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input {
+	font-family: "微软雅黑";
+	font-weight: normal;
+}
+address,
+cite,
+code,
+em,
+th {
+	font-weight: normal;
+	font-style: normal;
+}
+input,
+select,
+textarea {
+	outline: 0;
+	vertical-align: middle;
+}
+a:hover{text-decoration:none;}
+/*公共样式结束*/
+.HeaderWrap{width:100%;height:140px;background:#444;position:relative;/*background:url(../img/children.jpg) no-repeat;background-size:cover;*/}
+.HeaderBlog{margin:45px auto;color:#fff;}
+a.logo{text-decoration:none;line-height:50px;color:#9d9d9d;font-size:20px;padding-left:13px;}
+a.logo:hover{color:#fff;transition:all 0.5s ease;}
+/*中间部分开始*/
+/*左边侧栏开始*/
+.leftNoteMessage h3{padding:25px 25px;;border-bottom:1px solid #eee;border:1px solid #eee;border-left:none;}
+span.small-title{display:inline-block;padding:8px 0px;margin-right:20px;}
+.media{border:1px solid #eee;border-radius:5px;}
+a.img-Left{display:block;overflow:hidden;}
+img.img-transform{transition:all 0.6s ease;}
+img.img-transform:hover{transform: scale(1.1);transition:all 0.6s ease;}
+a.btn-link{color:#9d9d9d;transition:all 0.5s ease;text-decoration:none;}
+a.btn-link:hover{color:#0099FF;transition:all 0.5s ease;text-decoration:none;}
+.bg-hover{transition:all 0.6s ease;}
+.bg-hover:hover{background:#F8FCFE;transition:all 0.6s ease;color:#000;border-left:5px solid #1B809E;}
+/*左边侧栏结束*/
+
+
+/*右侧栏部分开始*/
+.border-Line{padding:20px;margin:10px 0px;border-bottom: 1px solid #eee;border-left:5px solid #1b809e;clear:both;/*清除浮动*/}
+.noteCon,.latelyEssay{clear:both;/*清除浮动*/}
+.noteCon a{width:100px;line-height:30px;display:block;background:#EEE;margin:8px 0px;text-align:center;border-radius:4px;color:#9d9d9d;transition:all 0.5s ease;}
+.noteCon a:hover{background:#5BC0DE;transition:all 0.5s ease;color:#fff;font-size:16px;;}
+span.articleDate{display:block;}
+h4 a{transition:all 0.5s ease;text-decoration:none;}
+h4 a:hover{color:#333;transition:all 0.5s ease;}
+/*右侧栏部分结束*/
+/*中间部分结束*/
+/*底部footer开始*/
+h4.friendLink{line-height:60px;}
+ul.footer-Ulist li{list-style:none;float:left;margin:4px 10px;}
+ul.footer-Ulist li a{color:#9d9d9d;transition:all 0.5s ease;}
+ul.footer-Ulist li a:hover{color:#fff;transition:all 0.5s ease;}
+ul.contactMe li{list-style:none;float:left;margin-right:15px;}
+ul.contactMe li a.linkMe{color:#9d9d9d;}
+ul.contactMe li a i.iconfont{font-size:40px;}
+a.wzcBlog{color:#9d9d9d;}
+a.wzcBlog:hover{color:#fff;}
+span.iconfont{display:none;position:fixed;bottom:40px;right:20px;font-size:40px;cursor:pointer;transition:all 0.5s ease;color:#11CD6E;}
+span.iconfont:hover{color:#5BC0DE;transition:all 0.5s ease;}
+/*底部footer结束*/

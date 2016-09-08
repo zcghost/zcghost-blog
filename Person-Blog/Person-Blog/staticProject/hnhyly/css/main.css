@@ -1,0 +1,399 @@
+/*2015-9-28日周一
+  作者：王震川
+  网页描述：海南旅游网
+ 
+*/
+*{padding:0px;margin:0px;}
+body{font-size:12px;font-family:"微软雅黑";color:#666;}
+ul li{list-style:none;}
+img{border:none;}
+/*head 头部开始*/
+#head{width:100%;height:145px;}
+#head .top{width:100%;height:30px;background:#F1F1F1;}
+#head .top .top_content{width:1220px;height:30px;margin:0 auto;}
+#head .top .top_content .top_content_left{width:250px;height:30px;float:left;line-height:30px;}
+#head .top .top_content .top_content_right{width:auto;height:30px; float:right;line-height:30px;}
+#head .top .top_content .top_content_left a{text-decoration:none;color:#141414;padding:0 5px;}
+#head .top .top_content .top_content_left span.font{font-weight:bold;color:#000;}
+#head .top .top_content .top_content_left a:hover{text-decoration:underline;color:#DF1078;}
+#head .top .top_content .top_content_right a{text-decoration:none;color:#141414;padding:0px 6px;}
+#head .top .top_content .top_content_right span.hello{color:#000;}
+#head .top .top_content .top_content_right i.green{color:#ACDA65;padding:0 3px;}
+#head .top .top_content .top_content_right i.red{color:#F77766;}
+#head .top .top_content .top_content_right i.iphone{color:#F1F1F1;padding:0px 3px;}
+#head .top .top_content .top_content_right a:hover{text-decoration:underline;color:#DF1078;}
+/*head 头部结束*/
+/*logoarea开始*/
+#head #logoarea{width:100%;height:115px;}
+#head #logoarea .midarea{width:1220px;height:110px;margin:0 auto;}
+#head #logoarea .midarea .logo{width:326px;height:110px;float:left;}
+#head #logoarea .midarea .search{width:460px;height:110px;float:left;margin-left:104px;}
+#head #logoarea .midarea .calls{width:226px;height:110px;float:right;}
+#head #logoarea .midarea .logo a{display:block;width:326px;height:75px;} 
+#head #logoarea .midarea .logo p span{padding-right:5px;color:#999;}
+/*logoarea 结束*/
+/*中间搜索框部分开始*/
+#head #logoarea .midarea .search .search_box{width:460px;height:40px;border:2px solid #DF1078;margin:30px auto;position:relative;}
+#head #logoarea .midarea .search .search_box .allproduct{width:80px;height:40px;background:#F8F8F8;text-align:center;line-height:40px;float:left;}
+#head #logoarea .midarea .search .search_box .allproduct a{text-decoration:none;color:#999;display:block;}
+#head #logoarea .midarea .search .search_box .allproduct i.iconfont{font-size:12px;padding:0 2px;}
+#head #logoarea .midarea .search .search_box .allproduct .list{width:80px;height:215px;text-align:left;display:none;}
+#head #logoarea .midarea .search .search_box .allproduct .list li{width:100%;height:25px;border:1px solid #ccc;line-height:25px;background:#F8F8F8;}
+#head #logoarea .midarea .search .search_box .allproduct .list li a{text-decoration:none;color:#666;display:block;}
+#head #logoarea .midarea .search .search_box .allproduct .list li a:hover{background:#EFEFEF;color:#000;}
+#head #logoarea .midarea .search .search_box .allproduct:hover ul{display:block;}
+/*还没结束，注意的是为甚么，划上去后，想让他显示出来，却怎么显示不了*/
+#head #logoarea .midarea .search .search_box form input.txt{width:290px;height:36px;float:left;outline:none;text-indent:4px;color:#999;}
+#head #logoarea .midarea .search .search_box .se{width:86px;height:40px;background:#DF1078;position:absolute;left:374px;text-align:center;line-height:40px;}
+#head #logoarea .midarea .search .search_box .se a{text-decoration:none;color:#fff;display:block;}
+#head #logoarea .midarea .search .search_box .se a i.iconfont{font-size:14px;padding-left:5px;}
+#head #logoarea .midarea .search .search_box .se a span{font-size:18px;padding-left:4px;}
+#head #logoarea .midarea .search .search_box .se:hover{box-shadow:1px 1px 1px #E61A89;}
+#head #logoarea .midarea .search p{margin-top:-30px;}
+#head #logoarea .midarea .search p a{display:inline-block;text-decoration:none;color:#999;padding-right:25px;padding-top:8px;}
+#head #logoarea .midarea .search p a:hover{text-decoration:underline;color:#DF1078;}
+/*中间搜索框结束*/
+#head #logoarea .midarea .calls img{width:226px;height:78px;margin:20px auto;}
+/*头部结束*/
+/*nav 导航栏开始*/
+#nav{width:100%;height:40px;background:#CA106D;}
+#nav .nav_box{width:1220px;height:40px;margin:0 auto;}
+#nav .nav_box .left_nav{width:200px;height:40px;float:left;}
+#nav .nav_box .main_nav{width:780px;height:40px;float:left;}
+#nav .nav_box .right_nav{width:234px;height:40px;float:right;}
+#nav .nav_box .left_nav{background:#B70F63;color:#fff;text-align:center;line-height:40px;font-size:14px;}
+#nav .nav_box .main_nav .list{height:40px;float:left;background:#CA106D;}
+#nav .nav_box .main_nav .list li{width:auto;height:40px;float:left;line-height:40px;margin:0px 12px;}
+#nav .nav_box .main_nav .list li a{text-decoration:none;font-size:16px;display:block;color:#fff;}
+#nav .nav_box .main_nav .list li a.first:hover{text-decoration:underline;background:#B70F63;transition:all 0.5s linear;}
+#nav .nav_box .main_nav .list li:hover{text-decoration:underline;background:#B70F63;transition:all 0.5s linear;}
+/*点击触发出境团游时，出现下面的提示框*/
+#nav .nav_box .main_nav .list .outborder{position:relative;/*相对定位*/}
+#nav .nav_box .main_nav .list .outborder .grouptour{width:800px;height:210px;position:absolute;border:1px solid #ccc;display:none;background:#FFF;transition:all 1s ease;line-height:20px;z-index:2;/*绝对定位，一定要找到它的父元素*/}
+#nav .nav_box .main_nav .list .outborder:hover .grouptour{display:block;transition:all 1s linear;} /*完全可以不用js实现触发时隐藏*/
+#nav .nav_box .main_nav .list .outborder:hover{text-decoration:underline;background:#B70F63;transition:all 0.5s linear;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_left{width:398px;height:210px;float:left;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_right{width:398px;height:210px;float:left;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_left a.b{color:#000;font-size:14px;text-indent:6px;padding-top:8px;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_left a.word{color:#000;font-size:14px;margin:0px 5px;display:inline-block;padding-top:4px;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_right a.b{color:#000;font-size:14px;text-indent:6px;padding-top:8px;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_right a.word{color:#000;font-size:14px;margin:0px 5px;display:inline-block;padding-top:4px;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_left a.b:hover{color:#B70F63;text-decoration:underline;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_left a.word:hover{color:#B70F63;text-decoration:underline;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_right a.b:hover{color:#B70F63;text-decoration:underline;}
+#nav .nav_box .main_nav .list .outborder .grouptour .grouptour_right a.word:hover{color:#B70F63;text-decoration:underline;}
+/*点击触发出境团游时，出现下面的提示框结束*/
+/*点击国内跟团游触发时，显示下面的盒子开始*/
+#nav .nav_box .main_nav .list .island{position:relative;}
+#nav .nav_box .main_nav .list .island .tour{width:800px;height:405px;border:1px solid #ccc;position:absolute;line-height:20px;display:none;background:#fff;}
+#nav .nav_box .main_nav .list .island:hover{background:#B70F63;text-decoration:underline;transition:all 0.5s linear;}
+#nav .nav_box .main_nav .list .island:hover .tour{display:block;transition:all 0.5s linear;}
+#nav .nav_box .main_nav .list .island .tour .tour_left{width:398px;height:405px;float:left;}
+#nav .nav_box .main_nav .list .island .tour .tour_right{width:398px;height:405px;float:left;}
+#nav .nav_box .main_nav .list .island .tour .tour_left a.b{color:#000;font-size:14px;text-indent:6px;padding-top:8px;}
+#nav .nav_box .main_nav .list .island .tour .tour_left a.com{font-size:14px;color:#000;display:inline-block;text-indent:6px;padding-top:6px;}
+#nav .nav_box .main_nav .list .island .tour .tour_right a.b{color:#000;font-size:14px;text-indent:6px;padding-top:8px;}
+#nav .nav_box .main_nav .list .island .tour .tour_right a.com{font-size:14px;color:#000;display:inline-block;text-indent:6px;padding-top:6px;}
+#nav .nav_box .main_nav .list .island .tour .tour_left a.b:hover{color:#B70F63;text-decoration:underline;}
+#nav .nav_box .main_nav .list .island .tour .tour_left a.com:hover{color:#B70F63;text-decoration:underline;}
+#nav .nav_box .main_nav .list .island .tour .tour_right a.b:hover{color:#B70F63;text-decoration:underline;}
+#nav .nav_box .main_nav .list .island .tour .tour_right a.com:hover{color:#B70F63;text-decoration:underline;}
+/*点击国内跟团游触发时，显示下面的盒子结束*/
+/*right_nav开始*/
+#nav .nav_box .right_nav{line-height:40px;}
+#nav .nav_box .right_nav a{text-decoration:none;color:#fff;padding-right:6px;}
+#nav .nav_box .right_nav a:hover{text-decoration:underline;}
+/*right_nav结束*/
+/*nav 导航栏结束*/
+/*中间部分开始*/
+#box{width:1220px;height:410px;margin:0 auto;}
+#box .left{width:200px;height:410px;float:left;}
+#box .banner{width:728px;height:410px;float:left;}
+#box .right{width:286px;height:410px;float:right;}
+/*left左边部分开始*/
+#box .left ul.left_list{width:200px;height:308px;}
+#box .left ul.left_list li{width:200px;height:61px;position:relative;line-height:20px;}
+#box .left ul.left_list li p i.tree{width:27px;height:27px;display:inline-block;background:url("../images/ico_h_a1.png") no-repeat;position:absolute;left:15px;top:7px;}
+#box .left ul.left_list li p.word a{color:#000;text-decoration:none;}
+#box .left ul.left_list li p span{font-size:14px;color:#000;font-weight:bold;display:inline-block;padding:7px 36px;}
+#box .left ul.left_list li span.dayu{display:inline-block;position:absolute;left:190px;top:20px;}
+#box .left ul.left_list li p span:hover{text-decoration:underline;color:#DF1078;}
+#box .left ul.left_list li p a:hover{color:#DF1078;text-decoration:underline;}
+#box .left ul.left_list li .case{width:800px;height:430px;background:#fff;border:1px solid #ccc;position:absolute;z-index:1;left:200px;top:-2px;display:none;}
+#box .left ul.left_list li.hover{background:#ccc;}
+#box .left ul.left_list li .case p{margin:10px 0px;}
+#box .left ul.left_list li .case p a span{font-size:14px;color:#000;}
+#box .left ul.left_list li .case p a span:hover{text-decoration:underline;color:#DF1078;}
+#box .left ul.left_list li .case p a{padding:0px 4px;color:#000;text-decoration:none;}
+#box .left ul.left_list li .case p a:hover{color:#DF1078;text-decoration:underline;}
+#box .left ul.left_list li .case .case_left{width:398px;height:430px;float:left;line-height:20px;}
+#box .left ul.left_list li .case .case_right{width:398px;height:430px;float:left;}
+#box .left ul.left_list li .case .case_left p span{font-size:14px;color:#000;font-weight:bold;}
+#box .left ul.left_list li .case .case_left p a{font-size:12px;color:#000;line-height:15px;display:inline-block;}
+#box .left ul.left_list li .case .case_right p span{font-size:14px;color:#000;font-weight:bold;}
+#box .left ul.left_list li .case .case_right p a{font-size:12px;color:#000;line-height:15px;display:inline-block;}
+#box .left ul.left_list li .case .case_right p a:hover{color:#DF1078;text-decoration:underline;}
+#box .left ul.left_list li .case .case_left p a:hover{color:#DF1078;text-decoration:underline;}
+#box .left .bottom{width:200px;height:100px;position:relative;}
+#box .left .bottom p span{display:inline-block;font-size:14px;color:#000;margin:12px 22px;font-weight:bold;}
+#box .left .bottom p span i.wallet{width:21px;height:21px;display:inline-block;background:url("../images/ico_h_a6.png") no-repeat 1px 1px;position:absolute;left:13px;top:5px;}
+#box .left .bottom p a{text-decoration:none;display:inline-block;padding:0px 13px;color:#ccc;}
+#box .left .bottom p a:hover{text-decoration:underline;color:#DF1078;}
+#box .left .bottom span.dayu{color:#ccc;display:inline-block;position:absolute;margin-top:22px;}
+/*left左边部分结束*/
+/*banner图开始*/
+#box .banner .lunbotu{width:728px;height:305px;}
+#box .banner .lunbotu .ImgList{width:728px;height:305px;position:absolute;z-index:-10;}
+#box .banner .lunbotu ul.button{width:200px;height:20px;float:left;margin-left:40%;margin-top:38%;text-align:center;line-height:20px;}
+#box .banner .lunbotu ul.button li{width:20px;height:20px;color:#fff;background:#676A77;border:1px solid #5D5D5E;float:left;margin:0px 9px;border-radius:10px;position:absolute;position:relative;z-index:-5;/*设置层级关系*/}
+#box .banner .lunbotu ul.button li.hover{background:#F84E4E;}
+#box .banner .lunbotu ul.button li a{text-decoration:none;display:block;color:#fff;}
+/*banner图结束 这个banner图有些问题，为什么选不中,为什么給li加a链接却不起作用，鼠标选中的按钮，对应的不是该图片*/
+/*banner图底部图片开始*/
+#box .banner .bottom{width:728px;height:105px;}
+#box .banner .bottom .bottom_L{width:240px;height:98px;float:left;margin:5px 0px; }
+#box .banner .bottom .bottom_m{width:240px;height:98px;float:left;margin:5px 4px;}
+#box .banner .bottom .bottom_r{width:240px;height:98px;float:right;margin:5px 0px;}
+/*banner底部图片结束*/
+/*右边的right特价优惠区域开始*/
+#box .right .topbox{width:275px;height:230px;margin:8px 4px;}
+#box .right .topbox h3{color:#000;text-indent:12px;padding-top:15px;}
+/*图像轮播开始*/
+#box .right .topbox .PartImg{width:245px;height:118px;margin:8px 12px;position:relative;overflow:hidden;/*隐藏溢出*/}
+#box .right .topbox .PartImg .PartImg_Scorll{width:1000%;height:118px;border:1px solid blue;position:absolute;left:0px;top:0px;/*绝对定位，要进行位置的一定得要用定位,等会用这里，利用js移动图片*/z-index:-5;}
+#box .right .topbox .PartImg .PartImg_Scorll img{float:left;/*解决图片的缝隙问题*/}
+/*图片轮播结束*/
+/*滚动文字的样式开始*/
+#box .right .topbox ul.PartScrollTxt{height:35px;text-indent:8px;overflow:hidden;/*文字超出部分给隐藏*/margin:0px auto;}
+#box .right .topbox ul.PartScrollTxt li{list-style:none;font-size:14px;line-height:35px;}
+/*滚动文字的样式结束*/
+/*按钮开始*/
+#box .right .topbox ul.PartScrollbut{width:260px;height:10px;float:left;margin-left:5%;margin-top:2%;text-align:center;line-height:10px;}
+#box .right .topbox ul.PartScrollbut li{list-style:none;width:40px;height:10px;color:#fff;border:1px solid #ccc;background:#064495;float:left;margin:0px 5px;}
+#box .right .topbox ul.PartScrollbut li.hover{background:#E10076;}
+/*按钮结束*/
+#box .right .bottom{width:272px;height:138px;background:blue;margin:0px 4px;}
+/*右边的right特价区域结束*/
+/*中间部分结束*/
+/*旅行路线开始*/
+#roate{width:1220px;height:79px;margin:0 auto;}
+/*旅行路线结束*/
+/*湖南卫室开始*/
+#partner{width:1220px;height:306px;margin:0 auto;}
+#partner .TV{width:194px;height:306px;float:left;}
+#partner .LiYue a img{max-width:100%;height:306px;float:right;}
+/*湖南卫室结束*/
+/*出境游部分开始*/
+#outborder{width:1220px;height:428px;border-left:1px solid #ddd;border-bottom:1px solid #ddd;border-right:1px solid #ddd;margin:20px auto;}
+#outborder .car{width:248px;height:420px;float:left;}
+#outborder .recommend{width:964px;height:428px;border-left:4px dotted #ccc;border-right:4px dotted #ccc; float:right;position:relative;}
+#outborder .car h2{padding:0px 25px;position:relative;}
+#outborder .car h2 strong{font-size:30px;color:#14BAD0;padding-left:15px;}
+#outborder .car h2 span{font-size:14px;color:#000;padding-left:39px;}
+#outborder .car h2 img{display:inline-block;margin-left:-25px;margin-top:0px;position:absolute;}
+#outborder .car .carimg{width:226px;height:314px;margin:14px 15px;}
+#outborder .recommend ul.nav{border-bottom:2px dotted #ddd;list-style-type:none;float:left;margin-left:10%;}
+#outborder .recommend ul.nav li{float:left;font-size:18px;text-align:center;margin:0px 5px;}
+#outborder .recommend a{text-decoration:none;display:inline-block;font-size:14px;color:#333;float:right;padding-left:3px;}
+#outborder .recommend a i.iconfont{color:#ddd;font-size:18px;margin-right:4px;}
+#outborder .recommend a:hover span{color:#CA106D;text-decoration:underline;}
+#outborder .recommend ul.nav li.hover{background:#F84E4E;}
+/*内容切换区域，对应的按钮区域开始*/
+#outborder .recommend .select{width:698px;height:316px;margin-top:68px;overflow:hidden;float:left;position:relative;margin-top:43px;}
+#outborder .recommend .select .select_con{height:316px;position:absolute;}
+#outborder .recommend .select .select_con ul.sel_imgList li{width:226px;height:151px;float:left;list-style:none;margin:3px 3px;position:relative;/*相对定位*/}
+#outborder .recommend .select .select_con ul.sel_imgList li a img:hover{transform:scale(1.05);transition:all 0.5s linear;}
+#outborder .recommend .select .select_con ul.sel_imgList li p{width:226px;height:0px;position:absolute;left:0px;bottom:0px;font-size:14px;color:#fff;background:#121D1A;overflow:hidden;/*溢出隐藏*/}
+#outborder .recommend .select .select_con ul.sel_imgList li p span{color:#FF6330;font-weight:bold;float:right;}
+/*内容切换区域,对应的按钮区域结束*/
+/*出境游部分结束*/
+/*价格区域的开始*/
+#outborder .recommend .price{width:258px;height:336px;float:right;position:absolute;right:0px;top:90px;}
+#outborder .recommend .price p{width:258px;height:55px;line-height:55px;color:#000;}
+#outborder .recommend .price p b{font-size:14px;background:#CA106D;border-radius:2px;color:#fff;}
+#outborder .recommend .price p span{color:#CA106D;float:right;font-size:18px;font-weight:700;}
+#outborder .recommend .price p a{padding:0px 10px;}
+#outborder .recommend .price p a:hover{text-decoration:underline;}
+#outborder .recommend .price .price_img{width:258px;height:166px;}
+/*价格区域的结束*/
+/*海岛游区域部分开始*/
+.haidaoyou{width:1220px;height:428px;margin:10px auto;}
+.haidaoyou h2{width:1220px;height:60px;line-height:60px;position:relative;}
+.haidaoyou h2 i.logo{width:38px;height:60px;margin-left:12px;display:inline-block;background:url("../images/index_a2.png")no-repeat;background-position:0px 12px;}
+.haidaoyou h2 span.haidao{display:inline-block;position:absolute;top:0px;left:60px;font-size:20px;}
+.haidaoyou h2 span.dec{font-size:12px;font-weight:100;display:inline-block;position:absolute;left:130px;top:3px;}
+.haidaoyou h2 ul{height:60px;float:left;position:absolute;top:0px;left:350px;}
+.haidaoyou h2 ul li{height:25px;text-align:center;float:left;margin-left:10px;margin-top:18px;font-size:14px;font-weight:100;}
+.haidaoyou h2 a.moreline{float:right;text-decoration:none;color:#ccc;font-size:14px;}
+.haidaoyou h2 a.moreline i.iconfont{padding-right:4px;}
+.haidaoyou h2 a.moreline:hover span{color:#CA106D;text-decoration:underline;transition:all 0.5s linear;}
+.haidaoyou h2 ul li a{text-decoration:none;color:#333;display:inline-block;position:relative;top:-17px;left:8px;text-align:center;}
+.haidaoyou h2 ul li.last{width:74px;height:25px;text-align:center;text-indent:-5px;}
+.haidaoyou h2 ul li span{position:absolute;top:3px;}
+.haidaoyou h2 ul li.hover{background:#F84E4E;color:#fff;text-decoration:underline;}
+.haidaoyou h2 ul li:hover a{text-decoration:underline;color:#fff;}
+.haidaoyou .con{width:1220px;height:314px;margin-top:4px;} 
+.haidaoyou .con .left{width:226px;height:310px;float:left;}
+.haidaoyou .con .right{width:700px;height:314px;float:left;margin-left:10px;overflow:hidden;}
+.haidaoyou .con .right .select{width:700px;height:314px;}
+.haidaoyou .con .right .select ul{width:700px;height:314px;float:left;}
+.haidaoyou .con .right .select ul li{width:226px;height:151px;float:left;margin-right:7px;margin-top:5px;position:relative;}
+.haidaoyou .con .right .select ul li.top{margin-top:0px;}
+.haidaoyou .con .right .select ul li p{width:226px;height:0px;background:rgba(0,0,0,0.5);position:absolute;bottom:0px;color:#fff;text-align:center;line-height:30px;}
+.haidaoyou .con .right .select ul li p span{font-size:15px;color:#FF6330;font-weight:700;padding-left:20px;}
+.haidaoyou .con .right .select ul li img{transition:all 0.5s ease;}
+.haidaoyou .con .right .select ul li:hover img{transform:scale(1.02);transition:all 0.5s ease;}
+.haidaoyou .con .right_price{width:280px;height:314px;background:#fff;float:right;}
+.haidaoyou .con .right_price p.freedom{width:280px;height:60px;line-height:60px;}
+.haidaoyou .con .right_price p.freedom b{font-size:14px;background:#14BAD0;border-radius:2px;color:#fff;}
+.haidaoyou .con .right_price p.freedom a{text-decoration:none;padding-left:20px;color:#333;}
+.haidaoyou .con .right_price p.freedom span{color:#F84E4E;float:right;font-size:18px;font-weight:700;}
+.haidaoyou .con .right_price .img{width:280px;height:166px;}
+/*海导游区域部分结束*/
+/*国内游开始*/
+.guoneiyou{width:1220px;height:428px;margin:10px auto;}
+.guoneiyou h2{width:1220px;height:60px;line-height:60px;position:relative;}
+.guoneiyou h2 p.left{width:340px;height:60px;float:left;}
+.guoneiyou h2 p.left img{position:absolute;top:4px;left:10px;}
+.guoneiyou h2 p.left b{padding-left:60px;font-size:20px;color:#333;}
+.guoneiyou h2 p.left span.love{font-size:12px;font-weight:100;display:inline-block;position:absolute;left:130px;top:3px;}
+.guoneiyou h2 p.title{width:535px;height:60px;float:left;margin-left:130px;position:relative;}
+.guoneiyou h2 p.more{width:120px;height:60px;float:right;}
+.guoneiyou h2 p.title a{text-decoration:none;color:#333;margin-left:3px;font-size:15px;font-weight:100;}
+.guoneiyou h2 p.title a.hover{background:#D36DC3;color:#fff;}
+.guoneiyou h2 p.more a{text-decoration:none;font-size:15px;color:#ccc;}
+.guoneiyou h2 p.more a i.iconfont{padding-right:4px;}
+.guoneiyou h2 p.more:hover span{color:#DF1078;text-decoration:underline;}
+.guoneiyou .left{width:226px;height:310px;float:left;}
+.guoneiyou .mid{width:700px;height:310px;float:left;margin-left:10px;overflow:hidden;}
+.guoneiyou .mid .con{width:700px;height:310px;}
+.guoneiyou .mid .con ul{width:700px;height:310px;margin-top:-6px;}
+.guoneiyou .mid .con ul li{width:226px;height:151px;float:left;margin-left:7px;margin-top:7px;position:relative;}
+.guoneiyou .mid .con ul li p{width:226px;height:0px;line-height:30px;background:rgba(0,0,0,0.5);color:#fff;text-indent:10px;position:absolute;bottom:0px;}
+.guoneiyou .mid .con ul li p span{font-size:15px;color:#FF6330;font-weight:700;padding-left:20px;}
+.guoneiyou .mid .con ul li img{transition:all 0.5s ease;}
+.guoneiyou .mid .con ul li:hover img{transform:scale(1.01);transition:all 0.5s ease;}
+.guoneiyou .right{width:275px;height:310px;float:right;}
+.guoneiyou .right p{width:275px;height:60px;line-height:25px;}
+.guoneiyou .right p b{font-size:14px;background:#14BAD0;border-radius:2px;color:#fff;}
+.guoneiyou .right p a{text-decoration:none;padding-left:3px;color:#333;}
+.guoneiyou .right p a:hover{text-decoration:underline;color:#14BAED;}
+.guoneiyou .right p span{color:#F84E4E;float:right;font-size:18px;font-weight:700;}
+.guoneiyou .right .gugong{width:280px;height:166px;background:url("../images/indext3 (1).jpg") no-repeat;background-position:-110px 0px;}
+/*国内游结束*/
+/*省内旅游开始*/
+#province{width:1220px;height:428px;margin:10px auto;}
+#province h2{width:1220px;height:60px;color:#000;}
+#province h2 .left{width:278px;height:60px;float:left;line-height:60px;}
+#province h2 .left span{font-size:12px;font-weight:100;padding-left:8px;}
+#province h2 .left i.logo{display:inline-block;width:40px;height:60px;float:left;background:url("../images/index_a4.png") no-repeat;background-position:0px 7px;padding-right:10px;}
+#province h2 .title{width:560px;height:60px;float:left;margin-left:130px;line-height:60px;}
+#province h2 .title a{text-decoration:none;color:#333;font-weight:100;margin-left:5px;}
+#province h2 .title a.hover{background:#D77BC9;color:#fff;text-decoration:underline;}
+#province h2 .more{width:120px;height:60px;float:right;line-height:60px;font-size:14px;}
+#province h2 .more a{float:right;text-decoration:none;color:#ccc;}
+#province h2 .more a i.iconfont{padding-right:4px;}
+#province h2 .more a:hover span{color:#D77BC9;text-decoration:underline;}
+#province .left_fengjing{width:226px;height:310px;float:left;}
+#province .mid_area{width:700px;height:310px;float:left;margin-left:10px;overflow:hidden;}
+#province .mid_area .con{width:700px;height:310px;}
+#province .mid_area ul{width:700px;height:310px;float:left;margin-top:-6px;}
+#province .mid_area ul li{width:226px;height:151px;float:left;margin-left:7px;margin-top:7px;position:relative;}
+#province .mid_area ul li p{width:226px;height:30px;background:rgba(0,0,0,0.5);position:absolute;bottom:0px;line-height:30px;color:#fff;text-indent:4px;}
+#province .mid_area ul li p span{float:right;font-size:18px;font-weight:700;color:#FF6330;}
+#province .mid_area ul li img{transition:all 0.5s ease;}
+#province .mid_area ul li:hover img{transform:scale(1.01);transition:all 0.5s ease;}
+#province .right_price{width:275px;height:310px;float:right;}
+#province .right_price p{width:275px;height:60px;line-height:25px;}
+#province .right_price p b{font-size:14px;background:#14BAD0;border-radius:2px;color:#fff;}
+#province .right_price p a{text-decoration:none;padding-left:3px;color:#333;padding-left:10px;}
+#province .right_price p a:hover{text-decoration:underline;}
+#province .right_price p span{color:#F84E4E;float:right;font-size:18px;font-weight:700;}
+#province .right_price .bg{width:275px;height:166px;background:url("../images/indext1 (1).jpg");background-position:-62px 0px;}
+
+/*省内旅游结束*/
+/*签证开始*/
+#visa{width:1220px;height:235px;border-right:1px solid #ddd;border-bottom:1px solid #ddd;border-left:1px solid #ddd;margin:0px auto;}
+#visa p strong{font-size:28px;color:#4FBE7C;position:absolute;margin:auto 50px;}
+#visa p{font-size:14px;border-bottom:4px solid #ddd;line-height:35px;position:relative;}
+#visa p span{margin-left:110px;}
+#visa p i.plane{width:38px;height:36px;display:inline-block;background:url("../images/plane.png")no-repeat;background-position:0px -1px;position:absolute;left:10px;}
+#visa p a{display:block;position:relative;}
+#visa p a i.iconfont{color:#ddd;display:inline-block;position:absolute;left:88px;}
+#visa p a{float:right;text-decoration:none;font-size:14px;color:#000;}
+#visa p a:hover span{color:#CA106D;text-decoration:underline;}
+#visa ul.list{height:130px;margin:15px 15px;float:left;list-style:none;}
+#visa ul.list li{width:220px;height:55px;color:#000;background:#F4F5F1;float:left;margin:6px 7px;line-height:55px;position:relative;}
+#visa ul.list li a{text-decoration:none;color:#000;display:block;position:absolute;}
+#visa ul.list li a span.w{color:#000;font-size:12px;margin-left:10px;}
+#visa ul.list li a:hover span.w{color:#DF1078;text-decoration:underline;}
+#visa ul.list li span{color:#CA106D;font-weight:800;font-size:16px;float:right;}
+/*签证结束*/
+/*青年文明号的开始*/
+#yong{width:1220px;height:380px;margin:0px auto;}
+#yong .Img{width:412px;height:300px;float:left;text-align:center;}
+#yong .word{width:370px;height:270px;float:left;margin:0px 60px;line-height:25px;}
+#yong .guide{width:300px;height:360px;float:right;}
+#yong a{text-decoration:none;color:#333;font-size:16px;}
+#yong a:hover{color:#CA106D;text-decoration:underline;}
+#yong .word h2{text-align:center;line-height:10px;margin-top:10px;}
+#yong .word h2 a{color:#222;font-size:25px;}
+#yong .word h2 a:hover{color:#CA106D;}
+#yong .word p a.title{font-size:12px;color:#ccc;margin-left:55px;display:block;margin-top:12px;}
+#yong .word p a.title:hover{color:#CA106D;}
+#yong .guide span{font-size:25px;color:#F00280;}
+#yong .guide .guide_box{width:300px;height:70px;line-height:40px;margin:6px auto;}
+#yong .guide .guide_box p.tp{width:100px;height:70px;float:left;margin-right:10px;}
+#yong .guide .guide_box p a{float:right;}
+/*青年文明号的结束*/
+/*旅游局合作开始*/
+#tour{width:1220px;height:210px;margin:0 auto;}
+#tour ul.list{width:1180px;height:128px;margin:0px 15px;float:left;}
+#tour ul.list li{width:90px;height:45px;float:left;margin:10px 19px;text-align:center;position:relative;}
+#tour ul.list li a img{width:57px;height:30px;position:absolute;top:0px;left:0px;}
+#tour ul.list li a{text-decoration:none;display:block;color:#000;padding-top:30px;}
+/*旅游局合作结束*/
+/*服务承诺部分开始*/
+#service{width:100%;height:225px;border-bottom:1px solid #ddd;background:#919191;}
+#service .service_top{width:950px;height:62px;margin:0 auto;}
+#service .service_top ul.list{height:62px;float:left;}
+#service .service_top ul.list li{width:62px;height:62px;float:left;margin-left:50px;}
+#service .service_top ul.list li i.server{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-10px 0px;}
+#service .service_top ul.list li i.cover{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-135px 0px;}
+#service .service_top ul.list li i.product{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-135px 0px;}
+#service .service_top ul.list li i.tiexin{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-262px 0px;}
+#service .service_top ul.list li i.host{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-387px 0px;}
+#service .service_top ul.list li i.first{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-514px 0px;}
+#service .service_top ul.list li i.star{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-767px 0px;}
+#service .service_top ul.list li i.delicate{width:62px;height:62px;display:block;background:url("../images/yy_03.png") no-repeat;background-position:-892px 0px;}
+#service #Case{width:100%;height:163px;background:#FAFAFA;}
+#service #Case .Case_box{width:1100px;height:165px;margin:0 auto;}
+#service  #Case .Case_box .case{width:145px;height:160px;float:left;margin:0px -66px;margin-left:125px;line-height:22px;}
+#service #Case .case h2{color:#000;margin-top:20px;}
+#service #Case .case a{text-decoration:none;color:#444;}
+#service #Case .case a:hover{color:#DF1078;text-decoration:underline;}
+/*服务承诺部分结束*/
+/*底部开始*/
+#bottom{width:100%;height:215px;}
+#bottom .box{width:730px;height:56px;margin:40px auto;text-align:center;line-height:20px;color:#000;}
+/*底部结束*/
+/*最后一部分底部开始*/
+#last{width:100%;height:50px;background:#CA106D;position:fixed;bottom:0px;}
+#last .case{width:1040px;height:50px;margin:0 auto;}
+#last p.phone{width:250px;height:50px;float:left}
+#last p.consult{width:390px;height:50px;float:left;}
+#last p.intrduce{width:394px;height:50px;float:right;text-align:center;line-height:50px;}
+#last p.consult a{display:block;width:128px;height:50px;float:left;overflow:hidden;transition:all 0.5s linear;}
+#last p.consult a i.online{display:block;width:128px;height:50px;background:url("../images/fix_bg2.png") no-repeat -2px 0px;}
+#last p.consult a i.QQconsult{display:block;width:128px;height:50px;background:url("../images/fix_bg2.png") no-repeat -125px 0px;}
+#last p.consult a i.special{display:block;width:128px;height:50px;background:url("../images/fix_bg2.png") no-repeat -250px 0px;}
+#last p.consult a i.hidden{display:block;width:128px;height:50px;}
+#last p.consult a i.line{display:block;background:url("../images/fix_bg2.png") no-repeat -2px -48px;}
+#last p.consult a:hover i.line{margin-top:-50px;transition:all 0.5s linear;}
+#last p.consult a i.consult{display:block;background:url("../images/fix_bg2.png") no-repeat -125px -48px;}
+#last p.consult a:hover i.consult{margin-top:-50px;transition:all 0.5s linear;}
+#last p.consult a i.spec{display:block;background:url("../images/fix_bg2.png") no-repeat -250px -48px;}
+#last p.consult a:hover i.spec{margin-top:-50px;transition:all 0.5s linear;}
+#last p.intrduce a.outborder{text-decoration:none;color:#fff;font-size:14px;}
+#last p.intrduce a.outborder:hover{text-decoration:underline;}
+/*最后一部分底部结束*/

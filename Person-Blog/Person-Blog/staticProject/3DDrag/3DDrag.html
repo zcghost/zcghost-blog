@@ -1,0 +1,111 @@
+ <!--
+    搭建3d场景：必须要有两个步骤
+	旋转的风格：transform-style:preserve-3d
+          井深: perspective:800px;
+    transform:rotateY(0deg) translateZ(350px) 前面是旋转的角度，后面的是位移，注意这两个参数的位置是不能变的，他们的次序不能变的，先旋转后位移与先位移和后旋转是不一样的概念，这个次序是非常重要的
+     onselectstart="return false"禁用复选的功能，选中的功能，拖动和复选发生了冲突
+ -->
+<!doctype html>
+<html lang="en" onselectstart="return false">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>3D拖拽</title>
+  <style type="text/css">
+        *{margin:0px;padding:0px;}
+		body{background:#000;overflow:hidden;}
+        #wrap{width:180px;height:200px;border:1px solid #000;margin:150px auto;position:relative;background-size:100%;transform-style:preserve-3d;/*搭建3d场景*//*井深放到变形里面*/transform:perspective(800px) rotateX(-10deg) rotateY(0deg)}
+		#wrap ul li{width:133px;height:200px;list-style:none;position:absolute;top:0px;left:0px;border-radius:3px;box-shadow:0 0 10px #fff;-webkit-box-reflect:below 15px -webkit-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);-moz-box-reflect:below 15px -moz-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%);-ms-box-reflect:below 15px -ms-linear-gradient(top,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 100%)/*倒影 15代表的与倒影的距离*//*从顶部完全透明的，到完全不透明的*/transform:rotateY(0deg) translateZ(0px);}
+        #wrap p{width:700px;height:700px;border-radius:350px;background:-webkit-radial-gradient(center,rgba(50,50,50,1),rgba(0,0,0,0));/*从中心向四周扩散开来的*/ position:absolute;top:100%;left:50%;margin-top:-350px;margin-left:-350px;transform:rotateX(90deg)}
+  </style>
+ </head>
+ <body>
+  
+         <div id="wrap">
+		        <ul>
+				     <li  style="background:url('images/1.jpg');"></li>
+					 <li  style="background:url('images/2.jpg');"></li>
+					 <li  style="background:url('images/3.jpg')"></li>
+					 <li  style="background:url('images/4.jpg')"></li>
+					 <li  style="background:url('images/5.jpg')"></li>
+					 <li  style="background:url('images/6.jpg')"></li>
+                     <li  style="background:url('images/7.jpg')"></li>
+                     <li  style="background:url('images/8.jpg')"></li>
+					 <li  style="background:url('images/9.jpg')"></li>
+					 <li  style="background:url('images/10.jpg')"></li>
+					 <li  style="background:url('images/11.jpg')"></li>
+				</ul>
+				<!--光晕开始-->
+				<p></p>
+				<!--光晕结束-->
+		 </div>
+
+
+         <script src="js/jquery-1.11.2.min.js"></script>
+         <script type="text/javascript">
+		          $(function(){
+				         var oL = $("#wrap ul li").size(); //计算li的个数
+					     var lDeg = 360/oL;                // 360除以长度
+						 var x1,x_,y1,y_; // x1代表前一个值
+						 var roY = 0;
+						 var roX = -10;
+						 var p = null;
+					     // 遍历li个数,可以用for循环，但jquery里面有一个方法each 
+						      /*
+					          $("#wrap ul li").each(function(i){  // i表示的数量
+						      var a = oL-1-i;  // 图片是倒着出来，初始进场动画
+					          $(this).css({
+						      transition:"1s"+(a*2)+'s+transform',
+						      transform:"rotateY("+i*lDeg+"deg) translateZ(350px)" // 给每一个加上一个度数
+						    });
+					       });*/
+						   for (var i=oL-1;i>=0;i--){
+				           $('#wrap ul li').eq(i).css({
+					       transition:"1s "+(oL-i)*0.15+"s transform,.5s "+(1+oL*0.15)+"s opacity",
+					      'transform':'rotateY('+lDeg*i+'deg) translateZ(350px)'
+				           });
+			            }
+
+					// 拖拽
+					  
+					   $(document).mousedown(function(e){
+						        // 清除定时器,当拖动得比较快时，清除上一次的定时器
+								clearInterval(p);
+						        x1 = e.clientX;  // 刚开始初始值
+								y1 = e.clientY;  
+					            $(document).bind('mousemove',function(e){ // 通过e获取鼠标当前的位置
+							        //var x = e.clientX;  // 鼠标点下距离浏览器左边的距离
+									//var y = e.clientY;  // 鼠标点下距离浏览器上边的距离
+									x_ = e.clientX-x1;  // x_代表的是差值，现在的值减去之前的值
+									y_ = e.clientY-y1;  // 鼠标的垂直
+									y1 = e.clientY;
+									x1 = e.clientX;     // 前一个值
+                                    roY = roY+0.2*x_;   // 乘以一个小数，0.2减慢拖的速度，旋转y轴对应的是x轴的变化,水平方向的值
+									roX = roX-0.2*y_;   // 垂直拖，x会发生变化
+									$("#wrap").css({
+									     'transform':'perspective(800px) rotateX('+roX+'deg) rotateY('+roY+'deg)'
+									});
+							    })
+							  // 鼠标离开后，移除事件
+							 }).mouseup(function(){
+							       $(document).unbind("mousemove"); // 清除绑定
+							       // 每隔30毫秒
+								  p =  setInterval(function(){
+									   if(Math.abs(x_)<0.2 && Math.abs(y_)<0.2){     // 有惯性了的
+									     clearInterval(p); // 清除定时器
+									   }
+								       x_ = x_*0.95;
+									   y_ = y_*0.95;
+									   roY = roY + 0.2*x_;
+									   roX = roX-0.2*y_;
+									   $("#wrap").css({'transform':'perspective(800px) rotateX('+roX+'deg) rotateY('+roY+'deg)'});
+								   },30);
+							 });
+					  });
+				
+		 </script>
+ </body>
+</html>
